@@ -1,0 +1,25 @@
+.ingreso{
+    top:20px;
+}
+.ingreso a{
+    margin:  5px;
+}
+.carousel img{
+    height: 400px;
+}
+footer{
+    background-color: rgb(116,148, 163);
+    
+    color: white;
+    position: relative;
+    top: 100px;
+  
+   /* display: block;
+   */
+    
+  }
+  footer a{
+    text-decoration: none;  
+    color:white ;
+  
+  }
