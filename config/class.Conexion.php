@@ -4,7 +4,7 @@ class Conexion extends mysqli{
     private $DB_HOST = 'localhost';
     private $DB_USER = 'root';
     private $DB_PASS = '';
-    private $DB_NAME = 'e-commerce';
+    private $DB_NAME = 'e-comerce';
 
 
     public function __construct() {
