@@ -1,18 +1,22 @@
 <?php
-require(__DIR__.'/../modelo/class.Usuario');
+require(__DIR__.'/../modelo/class.Usuario.php');
 
-//variables pueden cambiar
-$nombre=$_POST['nombre'];
-$correo=$_POST['correo'];
-$pass = $_POST['pass'];
-$accion = $_POST['accion'];
+$accion = $_REQUEST['accion'];
 
 
 switch($accion)
 {
     case 'ins': crear() ;
         break;
-    case 'login':;
+    case 'leer':Leer();
+        break;
+    case 'mod':modificar();
+        break;
+    case 'eli':Eliminar();
+        break;
+    case 'enc':encontrar();
+        break;
+    case 'login':logueo();
         break;
 }
 
@@ -28,6 +32,43 @@ function crear()
     $usuario -> crearUsuario($nombre,$correo,$pass,$rol);
     
 }
+function Leer()
+{
+    $usuario = new Usuario();
+    $result=$usuario->consultarUsuarios();
+    print_r($result);
+}
+
+function modificar()
+{
+    $id=$_POST['idusuario'];
+    $nombre=$_POST['nombre'];
+    $correo=$_POST['correo'];
+    $pass = $_POST['pass'];
+    $rol = $_POST['rol'];
+    $estado = $_POST['estado'];
+    
+    $usuario = new Usuario();
+    $usuario->modificarUsuario($id,$nombre,$correo,$pass,$rol,$estado);
+}
+
+function Eliminar()
+{
+    $id=$_POST['idusuario'];
+    
+    $usuario = new Usuario();
+    $usuario->eliminarUsuario($id);
+}
+
+function encontrar()
+{
+    
+    $clave=$_POST[''];
+    $usuario = new Usuario();
+    $usuario->consultarUsuarios();
+    
+    
+}
 
 function logueo()
 {
@@ -37,6 +78,7 @@ function logueo()
     $pass = $_POST['pass'];
     
     $result =  $usuario->loginUsuario($nombre,$pass);
+    print_r($result);
     if($result != 'error')
     {
         //crear sesion para usuarios con php
@@ -49,5 +91,7 @@ function logueo()
         echo 'Datos no validos';
     }
 }
+
+
 
 ?>
