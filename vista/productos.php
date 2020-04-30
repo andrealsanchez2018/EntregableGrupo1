@@ -23,13 +23,13 @@ include __DIR__ . "/../control/productoControl.php";
     <input type="text" name="descripcion" placeholder="Escriba descripcion"/>
     <input type="text" name="cantidad" placeholder="Escriba cantidad"/>
     <input type="text" name="idCategoria" placeholder="Escriba id Categoria"/>
-    <input type="text" name="idSubcategoria" placeholder="Escriba id Subcategoria"/>
+    <input type="text" name="idSubCategoria" placeholder="Escriba id Subcategoria"/>
     <input type="text" name="idEstado" placeholder="Escriba id de Estado"/>
     <input type="text" name="idUsuario_cre" placeholder="Escriba id de usuario creador"/>
     <input type="text" name="idUsuario_mod" placeholder="Escriba id de usuario modificador"/>
-<!--     <input type="text" name="fecha_mod" placeholder="Escriba fecha de modificación"/>
-    <input type="text" name="fecha_cre" placeholder="Escriba fecha de creación"/>
- -->    <input type="submit" value= "Crear" name="enter"/>
+    <!-- <input type="text" name="fecha_mod" placeholder="Escriba fecha de modificación"/>
+    <input type="hidden" name="fecha_cre" placeholder="Escriba fecha de creación"/> -->
+    <input type="submit" value= "Crear" name="enter"/>
         </form>
 
 <!-- form Consultar -->
@@ -47,12 +47,12 @@ include __DIR__ . "/../control/productoControl.php";
     <input type="text" name="descripcion" placeholder="Escriba descripcion"/>
     <input type="text" name="cantidad" placeholder="Escriba cantidad"/>
     <input type="text" name="idCategoria" placeholder="Escriba id Categoria"/>
-    <input type="text" name="idSubcategoria" placeholder="Escriba id Subcategoria"/>
+    <input type="text" name="idSubCategoria" placeholder="Escriba id Subcategoria"/>
     <input type="text" name="idEstado" placeholder="Escriba id de Estado"/>
     <input type="text" name="idUsuario_cre" placeholder="Escriba id de usuario creador"/>
     <input type="text" name="idUsuario_mod" placeholder="Escriba id de usuario modificador"/>
-<!--     <input type="text" name="fecha_mod" placeholder="Escriba fecha de modificación"/>
-    <input type="text" name="fecha_cre" placeholder="Escriba fecha de creación"/>
+    <input type="text" name="fecha_mod" placeholder="Escriba fecha de modificación"/>
+<!--     <input type="hidden" name="fecha_cre" placeholder="Escriba fecha de creación"/>
  -->    <input type="submit" name= "Actualizar"/>
         </form>
 
