@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +17,18 @@
         <br>
         <input type="pasword" name="pass" id="pass" placeholder="Contraseña">
         <br>
+        <?php ?>
         <select name="rol" id="rol" name="rol">
         <option value="3">Super Admin</option>
         <option value="2">Administrador</option>
         <option value="1">Usuario</option>
         </select>
+        <?php ?>
         <select name="estado" id="estado" name="estado">
         <option value="1"> Activo</option>
         <option value="0">Inactivo</option>
-       
         </select>
+        <?php ?>
         <input type="submit"  value="Registrar" name="enter" >
     </form>
     </div>
