@@ -12,9 +12,9 @@ class Usuario
    public function loginUsuario($correo,$pass)
     {
         $db = new Conexion();
-       $sql ="SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol WHERE e.idEstado = 1 And u.correo='$correo' And u.pasword ='$pass'";
-       $result = $db->query($sql);
-       if($result->num_rows > 0)
+        $sql ="SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol WHERE e.idEstado = 1 And u.correo='$correo' And u.pasword ='$pass'";
+        $result = $db->query($sql);
+        if($result->num_rows > 0)
         {
             $row = $result->fetch_assoc();
             return $row;
@@ -54,15 +54,17 @@ class Usuario
         $db = new Conexion();
         $sql= "SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol order by u.nombre asc ";
         //select de usuarios activos con rol
-        $result = $db->query($sql);
-        if($result->num_rows > 0)
+        return $result = $db->query($sql);
+        //$result;
+        
+        /*if($result->num_rows > 0)
         {
-            $row = $result->fetch_assoc();
+            $row = $result->fetch_array();
             return $row;
         }else
         {
             return 'error';
-        }
+        }*/
         
     }
     
@@ -70,6 +72,7 @@ class Usuario
     {
         $db = new Conexion();
         $sql= "SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol where u.nombre like '%$clave%' or u.correo like '%$clave%' or r.rol like '%$clave%' or e.estado like '%$clave%' order by u.nombre asc";
+        return $result = $db->query($sql);
     }
 }
 
