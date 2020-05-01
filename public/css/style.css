@@ -14,21 +14,20 @@ footer{
     position: relative;
     top: 100px;
   
-   /* display: block;
-   */
-    
+
   }
   footer a{
     text-decoration: none;  
     color:white ;
   
   }
-.form-group{
-    font-size: 12px;
-}
+ .form-group{
+    font-size: 14px;
+} 
 .buscar{
     width: 350px;
 }
 h2{
-    font-size: 14px;
+    font-size: 20px;
+    
 }

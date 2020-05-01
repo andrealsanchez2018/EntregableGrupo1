@@ -36,6 +36,8 @@
         </div>
 
         </div>
+
+        
         <div class="row">
 
             <div class="col-md-12 col-12">
@@ -60,45 +62,46 @@
     </header>
 
     <!-- Formulario del producto -->
+   <center> <h2>Administración de Usuario</h2></center>
     <section class="formulario" style="margin-top: 20px;" >
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-5 col-12">
         <form>
-            <h2>Registro y Modificación</h2>
+           
             <div class="form-group row">
               <label for="idusuario" class="col-sm-2 ">idUsuario</label>
               <div class="col-sm-10">
-              <input type="number" id="idusuario" placeholder="Código de usuario" name="idusuario">
+              <input class="form-control" type="number" id="idusuario" placeholder="Código de usuario" name="idusuario">
               </div>
             </div>
             <div class="form-group row">
                 <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
-                <input type="text"  id="nombre" placeholder="Nombre de usuario" name="nombre">
+                <input class="form-control" type="text"  id="nombre" placeholder="Nombre de usuario" name="nombre">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="correo" class="col-sm-2 col-form-label">Correo</label>
                 <div class="col-sm-10">
-                <input type="text"  id="correo" placeholder="Correo" name="correo">
+                <input class="form-control" type="text"  id="correo" placeholder="Correo" name="correo">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="pass" class="col-sm-2 col-form-label">password</label>
                 <div class="col-sm-10">
-                <input type="text"  id="pass" placeholder="Contraseña" name="pass">
+                <input class="form-control" type="text"  id="pass" placeholder="Contraseña" name="pass">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="rol" class="col-sm-2 col-form-label">idRol</label>
                 <div class="col-sm-10">
-                <input type="number"  id="rol" placeholder="Rol del usuario" name="rol">
+                <input class="form-control" type="number"  id="rol" placeholder="Rol del usuario" name="rol">
                 </div>
               </div>
               <div class="form-group row">
                 <label for="estado" class="col-sm-2 col-form-label">idEstado</label>
                 <div class="col-sm-10">
-                <input type="number"  id="estado" placeholder=" en Stock" name="estado">
+                <input class="form-control" type="number"  id="estado" placeholder=" en Stock" name="estado">
                 </div>
               </div>
 
@@ -106,15 +109,50 @@
           </form>
         </div>
         <!-- sección de opciones -->
-        <div class="col-8">
+        <div class="col-md-7 col-12">
              <form class="form-inline my-2 ">
              <input class="buscar mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-           <center> <button type="submit" class="btn btn-primary">Ingresar</button> </center><hr>
-           <center> <button type="submit" class="btn btn-primary">Actualizar</button></center><hr>
-            <center> <button type="submit" class="btn btn-primary">Eliminar</button> </center><hr>
-            <center> <button type="submit" class="btn btn-primary">Consultar</button></center><hr>
+             
+            </form>
+            <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-ligth ">
+                    <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Contraseña</th>
+                    <th scope="col">idRol</th>
+                    <th scope="col">idEstado</th>
+                    <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button>Modificar</button><button class="icon-trash-empty"></button></td>
+                    </tr>
+                    <tr>
+                    <th scope="row">2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button>Modificar</button><button class="icon-trash-empty"></button></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            </div>
+
+
         </div>
         </div>
     </section>
