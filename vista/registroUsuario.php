@@ -1,5 +1,6 @@
 <?php 
-
+session_start();
+echo @$_SESSION['user']['nombre'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,13 +12,14 @@
 <body>
     <div id="registroForm">
     <form method="POST" action="control/usuarioControl.php?accion=registrar">
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
+        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
         <br>
         <input type="text" name="correo" id="correo" placeholder="Correo">
         <br>
         <input type="pasword" name="pass" id="pass" placeholder="Contraseña">
         <br>
-        <?php ?>
+        
+        <?php if(@$_SESSION['user']['rol']=='administrador'):?>
         <select name="rol" id="rol" name="rol">
         <option value="3">Super Admin</option>
         <option value="2">Administrador</option>
@@ -25,10 +27,10 @@
         </select>
         <?php ?>
         <select name="estado" id="estado" name="estado">
-        <option value="1"> Activo</option>
+        <option value="1">Activo</option>
         <option value="0">Inactivo</option>
         </select>
-        <?php ?>
+        <?php endif;?>
         <input type="submit"  value="Registrar" name="enter" >
     </form>
     </div>
