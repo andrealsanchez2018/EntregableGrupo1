@@ -1,7 +1,7 @@
 <?php
 require(__DIR__.'/../modelo/class.Usuario.php');
 
-$accion = $_REQUEST['accion'];
+@$accion = $_POST['mod'];
 
 
 switch($accion)
@@ -36,7 +36,12 @@ function Leer()
 {
     $usuario = new Usuario();
     $result=$usuario->consultarUsuarios();
-    print_r($result);
+    
+    foreach($result as $res)
+    {
+        print_r($res);
+    }
+    
 }
 
 function modificar()
@@ -63,9 +68,9 @@ function Eliminar()
 function encontrar()
 {
     
-    $clave=$_POST[''];
+    $clave=$_POST['buscar'];
     $usuario = new Usuario();
-    $usuario->consultarUsuarios();
+    $usuario->encontrarUsuario($clave);
     
     
 }
@@ -85,7 +90,7 @@ function logueo()
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['user']=$result;
-        header('location: ../vistas/perfil.php');
+        header('location: ../vistas/index.php');
     }else{
         //header('location: ../vistas/index.php?res=usuario_Inexistente');
         echo 'Datos no validos';
