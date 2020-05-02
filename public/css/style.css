@@ -23,7 +23,11 @@ footer{
   }
  .form-group{
     font-size: 14px;
+    
 } 
+.form-control{
+    margin: 5px 0px;
+}
 .buscar{
     width: 350px;
 }
@@ -49,7 +53,7 @@ height: 600px;
 .card{
 height: 370px;
 width: 400px;
-background-color: rgba(0,0,0,0.5) ;
+background-color: rgba(53, 14, 99, 0.5) ;
 }
 .card-header h3,.links{
 color: white;
