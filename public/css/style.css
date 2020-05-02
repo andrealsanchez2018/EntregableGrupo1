@@ -31,3 +31,55 @@ h2{
     font-size: 20px;
     
 }
+/* Estilos login */
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+
+.log,.login{
+background-image: url('../img/fondo_login.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 600px;
+}
+
+.container{
+height: 600px;
+}
+
+.card{
+height: 370px;
+width: 400px;
+background-color: rgba(0,0,0,0.5) ;
+}
+.card-header h3,.links{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color:rgb(116,148, 163);
+color: black;
+}
+
+.login_btn{
+color: black;
+background-color:rgb(116,148, 163);
+width: 150px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+.h1-login{
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    text-align: center;
+   font-size: 70px;
+   margin: 10px;
+   margin-top: 20px;
+}

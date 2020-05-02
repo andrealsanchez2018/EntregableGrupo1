@@ -7,10 +7,11 @@ echo @$_SESSION['user']['nombre'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro :: Clases PHP</title>
+    <title>Registro de Usuario</title>
 </head>
 <body>
     <div id="registroForm">
+        
     <form method="POST" action="control/usuarioControl.php?accion=registrar">
         <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
         <br>
