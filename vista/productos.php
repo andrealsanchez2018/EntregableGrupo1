@@ -12,7 +12,7 @@
     <div class="container">
         <h2>Insertar productos</h2>
         <div class="sub-container">
-            <form class="formInsertar" method="POST" action="productos.php?accionProd=crearProd" enctype="multipart/form-data">
+        <form class="formInsertar" method="POST" action="productos.php?accionProd=crearProd" enctype="multipart/form-data">
                 <input type="text" name="nombreProducto" placeholder="Nombre producto:"/>
                 <input type="text" name="precio" placeholder="Precio:"/>
                 <input type="text" name="imgProducto" placeholder="Imagen producto:"/>
@@ -24,7 +24,7 @@
                     <option value="" selected>Seleccione categoria:</option>
                     <option value="1">Niños</option> 
                     <option value="2">Mujeres</option>
-                    <option value="3">Mujeres</option>
+                    <option value="3">Hombres</option>
                 </select>
                 
                 <select class="itemSubCategoria" name="idSubCategoria">
@@ -43,10 +43,33 @@
     </div>
 
 
-<!-- form Consultar -->
+    <!-- Section de filtrar contacto -->
+    <div class="container">
+        <form class="formQuery" method="POST" action="productos.php?accionProd=filtrarProd" enctype="multipart/form-data">
+            <h3>Filtrar contactos</h3>
+            <label for="" style="color: gray;">Filtrar por:</label>
+            <select class="itemQuery" name="itemQuery">
+                <option value="idProducto" selected>Id producto</option> 
+                <option value="nombreProducto">Nombre producto</option>
+                <option value="precio">Precio</option>
+            </select>
+            <input type="text" name="filter" id="filter" placeholder="Dato a consultar:" required>
+            <input type="submit" value="Buscar producto"/>
+        </form>
+    </div>
 
+
+
+
+
+
+
+
+
+<!-- form Consultar -->
     <div class="container">
         <h2>Lista y actualización de productos</h2>
+<<<<<<< HEAD
             <div class="sub-container">
                 <form class="formInsertar" method="POST" action="productos.php?accionProd=consultarProd" enctype="multipart/form-data">
                     <input type="submit" value="Consultar">
@@ -57,12 +80,17 @@
                 ?> 
                 </form>
             </div>
+=======
+        <div class="sub-container">
+            <form class="formConsultar" method="POST" action="productos.php?accionProd=consultarProd" enctype="multipart/form-data">   
+                <?php       
+                    include_once __DIR__ . "/../control/productoControl.php";
+                ?> 
+                <input type="submit" value="Consultar todos los productos">
+            <form>
+        </div>
+>>>>>>> f05c4ed53dd9ab42619a8a396e1e2483bd9a2e5a
     </div>
-    
-    
-    
-<!-- form Actualizar -->
-
 
 </body>
 </html>
