@@ -1,7 +1,7 @@
 <?php
 require(__DIR__.'/../modelo/class.Usuario.php');
 
-@$accion = $_POST['mod'];
+@$accion = $_REQUEST['mod'];
 
 
 switch($accion)
@@ -18,6 +18,8 @@ switch($accion)
         break;
     case 'login':logueo();
         break;
+    case 'close':Logout();
+        break;
 }
 
 function crear()
@@ -29,7 +31,18 @@ function crear()
     $correo=$_POST['correo'];
     $pass = $_POST['pass'];
     $rol = $_POST['rol'];
-    $usuario -> crearUsuario($nombre,$correo,$pass,$rol);
+    if($rol == "")
+    {
+        $rol = 1;
+    }
+    $estado = $_POST['estado'];
+    if($estado == "")
+    {
+        $estado = 1;
+    }
+    $usuario -> crearUsuario($nombre,$correo,$pass,$rol,$estado);
+    logueo($correo,$pass);
+    
     
 }
 function Leer()
@@ -39,7 +52,16 @@ function Leer()
     
     foreach($result as $res)
     {
-        print_r($res);
+        
+        echo "<tr>
+            <th scope='row'>".$res['idUsuario']."</th>
+            <td>".$res['nombre']."</td>
+            <td>".$res['correo']."</td>
+            <td>".$res['password']."</td>
+            <td>".$res['rol']."</td>
+            <td>".$res['estado']."</td>
+            <td><button>Modificar</button><button class='icon-trash-empty'></button></td>
+            </tr>";
     }
     
 }
@@ -82,20 +104,32 @@ function logueo()
     $correo=$_POST['correo'];
     $pass = $_POST['pass'];
     
-    $result =  $usuario->loginUsuario($nombre,$pass);
-    print_r($result);
-    if($result != 'error')
+    $result = $usuario->loginUsuario($correo,$pass);
+    //echo $result;
+    //print_r($result);
+    if($result != 'error' && $result['estado']=='activo')
     {
         //crear sesion para usuarios con php
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['user']=$result;
-        header('location: ../vistas/index.php');
+        header('location: ../index.php');
     }else{
         //header('location: ../vistas/index.php?res=usuario_Inexistente');
         echo 'Datos no validos';
     }
+    
 }
+
+function logout()
+{
+    session_start();
+    unset($_SESSION['loggedin']);
+    unset($_SESSION['user']);
+    session_destroy();
+    header('location: ../index.php');
+}
+
 
 
 

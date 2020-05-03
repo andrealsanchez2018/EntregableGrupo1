@@ -24,23 +24,24 @@
                 
             </div>
             <div class="card-body">
-                <form>
+                <form action="../control/usuarioControl.php" method="post">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text fas fa-user"></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="correo">
+                        <input type="text" class="form-control" placeholder="correo" name="correo">
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text fas fa-key"></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="password">
+                        <input type="password" class="form-control" placeholder="password" name="pass">
                     </div>
 
                     <div class="form-group">
                         <input type="submit" value="Iniciar Sesión" class="btn float-right login_btn">
+                        <input type="hidden" value="login" name="mod">
                     </div>
                 </form>
             </div>

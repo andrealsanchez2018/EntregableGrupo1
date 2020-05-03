@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['loggedin']))
+{
+    $logueado=true;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,8 +30,14 @@
 
             </div>
             <div class="ingreso col-md-3 col-3">
+                <?php if(!isset($logueado)):?>
                 <span><a href="vista/login.php">Iniciar Sesión </a></span>
                 <span><a href="">Registrarme</a></span>
+                <?php else:?>
+                <span><a href="control/usuarioControl.php?mod=close">Cerrar Sesión </a></span>
+                <span><a href="#"><?php echo $_SESSION['user']['nombre'];?> </a></span>
+                <?php endif;?>
+                
                 <span><a href="#" class="icon-cart-arrow-down"></a></span>
 
             </div>

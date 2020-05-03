@@ -1,6 +1,7 @@
 <?php 
 session_start();
-echo @$_SESSION['user']['nombre'];
+@$_SESSION['user']['nombre'];
+$rol = @$_SESSION['user']['rol'];
 ?>
 
 <!DOCTYPE html>
@@ -21,16 +22,17 @@ echo @$_SESSION['user']['nombre'];
                 
             </div>
             <div class="card-body">
-                <form>
-                <form method="POST" action="control/usuarioControl.php?accion=registrar">
+                
+                <form action="../control/usuarioControl.php" method="post">
                     <div></div>
                     <input class="form-control " type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
 
                     <input class="form-control " type="text" name="correo" id="correo" placeholder="Correo">
 
-                    <input class="form-control " type="pasword" name="pass" id="pass" placeholder="Contraseña">
+                    <input class="form-control " type="password" name="pass" id="pass" placeholder="Contraseña">
+                    <input type="hidden" value="ins" name="mod">
 
-                    <?php /*  if (@$_SESSION['user']['rol'] == 'administrador') :  */ ?>
+                    <?php if ($rol == 'admin' || $rol == 'SuperAdmin') :  ?>
                     <select class="form-control" name="rol" id="rol" name="rol">
                         <option value="3">Super Admin</option>
                         <option value="2">Administrador</option>
@@ -44,10 +46,10 @@ echo @$_SESSION['user']['nombre'];
                         <option value="0">Inactivo</option>
                     </select>
 
-                    <?php /* endif; */ ?>
+                    <?php  endif;  ?>
                     <input type="submit" value="Registrar" name="enter" class="btn float-right login_btn">
                 </form>
-                </form>
+               
             </div>
            
         </div>

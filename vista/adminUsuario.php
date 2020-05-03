@@ -1,11 +1,4 @@
-<?php
-session_start();
-echo @$_SESSION['user']['nombre'];
 
-require(__DIR__ . '/../control/usuarioControl.php');
-
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,8 +13,17 @@ require(__DIR__ . '/../control/usuarioControl.php');
 
 <body class="container">
 
-    <?php include 'header.php' ?>
+<?php 
 
+    require_once('header.php'); 
+
+    //require(__DIR__ . '/../control/usuarioControl.php');
+    if(checkRol()=='Usuauro')
+    {
+        header('location: ../index.php?err=SBIA');
+    }
+
+?>
     <!-- Formulario del producto -->
     <center>
         <h2>Administración de Usuario</h2>
@@ -31,26 +33,25 @@ require(__DIR__ . '/../control/usuarioControl.php');
             <div class="col-md-3 col-12">
                 <?php //include('registroUsuario.php')
                 ?>
-                <form>
+                <form action="">
                     <div class="form-group row">
                         <input class="form-control " type="number" id="idusuario" placeholder="Código de usuario" name="idusuario">
                         <input class="form-control " type="text" id="nombre" placeholder="Nombre de usuario" name="nombre">
                         <input class="form-control " type="text" id="correo" placeholder="Correo" name="correo">
                         <input class="form-control " type="text" id="pass" placeholder="Contraseña" name="pass">
-                        <?php  if (@$_SESSION['user']['rol'] == 'administrador') :   ?>
+                        <?php  if (checkRol() == 'admin' || checkRol() == 'SuperAdmin') :   ?>
                         <select class="form-control" name="rol" id="rol" name="rol">
                             <option value="3">Super Admin</option>
                             <option value="2">Administrador</option>
                             <option value="1">Usuario</option>
                         </select>
 
-                        <?php ?>
-
                         <select class="form-control" name="estado" id="estado" name="estado">
                             <option value="1">Activo</option>
                             <option value="0">Inactivo</option>
                         </select>
-
+                        <?php  else: ?>
+                        <input type="hidden" id="rol" name="rol" value="1">
                         <?php endif;  ?>
 
                         <center>
@@ -77,31 +78,15 @@ require(__DIR__ . '/../control/usuarioControl.php');
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Correo</th>
                                 <th scope="col">Contraseña</th>
-                                <th scope="col">idRol</th>
-                                <th scope="col">idEstado</th>
+                                <th scope="col">Rol</th>
+                                <th scope="col">Estado</th>
                                 <th scope="col">Opciones</th>
                             </tr>
                         </thead>
                         <tbody id="result">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><button>Modificar</button><button class="icon-trash-empty"></button></td>
-                            </tr>
+                            
 
-                            <tr>
-                                <th scope="row">2</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><button>Modificar</button><button class="icon-trash-empty"></button></td>
-                            </tr>
+                            
 
                         </tbody>
                     </table>
@@ -111,7 +96,7 @@ require(__DIR__ . '/../control/usuarioControl.php');
             </div>
         </div>
     </section>
-    <?php include 'footer.php' ?>
+    <?php include 'footer.php'; ?>
     <script type="text/javascript" src="../public/js/Async.js"></script>
 </body>
 

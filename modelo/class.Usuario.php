@@ -12,7 +12,7 @@ class Usuario
    public function loginUsuario($correo,$pass)
     {
         $db = new Conexion();
-        $sql ="SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol WHERE e.idEstado = 1 And u.correo='$correo' And u.pasword ='$pass'";
+        $sql ="SELECT u.idUsuario, u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol WHERE e.idEstado = 1 And u.correo='$correo' And u.password ='$pass'";
         $result = $db->query($sql);
         if($result->num_rows > 0)
         {
@@ -25,11 +25,11 @@ class Usuario
        
     } 
     
-    public function crearUsuario($nombre,$correo,$pass,$rol)
+    public function crearUsuario($nombre,$correo,$pass,$rol,$estado)
     {
         $db = new Conexion();
-        $sql ="Insert into usuarios(nombre,correo,password,idRol,idEstado) Values ($nombre,$correo,$pass,$rol,1)";
-        $db->query($sql)? header('location:../vistas/index.php'):header('location:../vistas/index.php?err=FCU');
+        $sql ="Insert into usuarios(nombre,correo,password,idRol,idEstado) Values ('$nombre','$correo','$pass',$rol,$estado)";
+        $db->query($sql)? header('location:../index.php'):header('location:../index.php?err=FCU');
         
     }
     
@@ -52,7 +52,7 @@ class Usuario
     public function consultarUsuarios()
     {
         $db = new Conexion();
-        $sql= "SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol order by u.nombre asc ";
+        $sql= "SELECT  u.idUsuario, u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol order by u.nombre asc ";
         //select de usuarios activos con rol
         return $result = $db->query($sql);
         //$result;
