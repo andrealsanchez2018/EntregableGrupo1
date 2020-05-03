@@ -48,9 +48,14 @@
     <div class="container">
         <h2>Lista y actualización de productos</h2>
             <div class="sub-container">
+                <form class="formInsertar" method="POST" action="productos.php?accionProd=consultarProd" enctype="multipart/form-data">
+                    <input type="submit" value="Consultar">
                 <?php
+                    
                     include __DIR__ . "/../control/productoControl.php";
-                ?>
+                    
+                ?> 
+                </form>
             </div>
     </div>
     
