@@ -2,7 +2,6 @@
 
 require(__DIR__ . '/../modelo/class.Producto.php');
 
-listarProductos();
 
 if (isset($_GET['accionProd'])) { # isset: comprobar que la variable sea diferente a nulo
     $accionProd = $_GET['accionProd'];
@@ -11,6 +10,9 @@ switch ($accionProd) {
     case 'crearProd':
         guardarProducto();
         break;
+    case 'consultarProd':
+        listarProductos();
+    break;
 }
 } 
 
@@ -46,17 +48,16 @@ function listarProductos(){
 
 
         foreach ($listaProd as $productoEncontrado) :?>
-            <form class="formInsertar" method="POST"  action="productos.php?accionProd=crearProd" enctype="multipart/form-data">
-                <div class="card">
+                <form class="card" method="POST" action="productos.php?accionProd=actualizarProd" enctype="multipart/form-data">
                     <img class="images" src="<?php echo $productoEncontrado[3]; ?>" alt="">
                     <input type="hidden" readonly="readonly" name="idProductoUpdate" id="idProductoUpdate" value="<?php echo $productoEncontrado[0]; ?>"/>
                     <div class="row">
                         <label class="labelsUpdate" for="nombreProductoUpdate">Nombre: </label>
-                        <input type="text" name="nombreProductoUpdate" id="nombreProductoUpdate" value="<?php echo $productoEncontrado[1]; ?>" required/>
+                        <input type="text" name="nombreProductoUpdate" id="nombreProductoUpdate" value="<?php echo $productoEncontrado[1]; ?>"/>
                     </div>
                     <div class="row">
                         <label  class="labelsUpdate" for="precioUpdate">Precio: </label>
-                        <input type="text" name="precioUpdate" id="precioUpdate" value="<?php echo $productoEncontrado[2]; ?>" required/>
+                        <input type="text" name="precioUpdate" id="precioUpdate" value="<?php echo $productoEncontrado[2]; ?>"/>
                     </div>
                     <div class="row">
                         <label class="labelsUpdate"  for="descripcionUpdate">Descripción: </label>
@@ -74,14 +75,10 @@ function listarProductos(){
                         <a id="Eliminar" href="eliminar.php?idContact=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
                     </div>
                 </div>
-            </form>
         <?php endforeach;
 
     }else {
         echo 'No hay productos registrados';
     }
 }
-/* ctrl + \  = dividir en 2 ventanas */
-
-/*  */
 ?>
