@@ -13,8 +13,6 @@ switch ($accionProd) {
     case 'consultarProd':
         listarProductos();
     break;
-<<<<<<< HEAD
-=======
     case 'filtrarProd':
         filtrarProductos();
     break;
@@ -25,7 +23,6 @@ switch ($accionProd) {
         eliminaProductos();
     break;
 
->>>>>>> f05c4ed53dd9ab42619a8a396e1e2483bd9a2e5a
 }
 } 
 
@@ -62,34 +59,6 @@ function listarProductos(){
 
 
         foreach ($listaProd as $productoEncontrado) :?>
-<<<<<<< HEAD
-                <form class="card" method="POST" action="productos.php?accionProd=actualizarProd" enctype="multipart/form-data">
-                    <img class="images" src="<?php echo $productoEncontrado[3]; ?>" alt="">
-                    <input type="hidden" readonly="readonly" name="idProductoUpdate" id="idProductoUpdate" value="<?php echo $productoEncontrado[0]; ?>"/>
-                    <div class="row">
-                        <label class="labelsUpdate" for="nombreProductoUpdate">Nombre: </label>
-                        <input type="text" name="nombreProductoUpdate" id="nombreProductoUpdate" value="<?php echo $productoEncontrado[1]; ?>"/>
-                    </div>
-                    <div class="row">
-                        <label  class="labelsUpdate" for="precioUpdate">Precio: </label>
-                        <input type="text" name="precioUpdate" id="precioUpdate" value="<?php echo $productoEncontrado[2]; ?>"/>
-                    </div>
-                    <div class="row">
-                        <label class="labelsUpdate"  for="descripcionUpdate">Descripción: </label>
-                        <input type="text" name="descripcionUpdate" id="descripcionUpdate" value="<?php echo $productoEncontrado[4]; ?>" required/>
-                    </div>
-                    <div class="row">
-                        <label class="labelsUpdate"  for="cantidadUpdate">Cantidad: </label>
-                        <input type="text" name="cantidadUpdate" id="cantidadUpdate" value="<?php echo $productoEncontrado[5]; ?>" required/>
-                    </div>
-                    <!-- <div class="divFile">
-                        <input class="file" type="file" name="imgProducto" required/>    
-                    </div> -->
-                    <div class="buttonsActions">
-                        <input class="buttonUpdate" name="btnEnviar" type="submit" value="Actualizar contacto">
-                        <a id="Eliminar" href="eliminar.php?idContact=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
-                    </div>
-=======
                 <div class="card">
                     <form  class="formConsultar" method="POST" action="productos.php?accionProd=actualizarProd" enctype="multipart/form-data">
                         <img class="images" src="<?php echo $productoEncontrado[3]; ?>" alt="">
@@ -152,7 +121,6 @@ function listarProductos(){
                             <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
                         </div>
                     </form> 
->>>>>>> f05c4ed53dd9ab42619a8a396e1e2483bd9a2e5a
                 </div>
         <?php endforeach;
 
@@ -164,8 +132,6 @@ function listarProductos(){
 
 
 }
-<<<<<<< HEAD
-=======
 
 
 
@@ -286,5 +252,4 @@ function eliminaProductos(){
     $producto->eliminarProductos($idProd);
 }
 
->>>>>>> f05c4ed53dd9ab42619a8a396e1e2483bd9a2e5a
 ?>

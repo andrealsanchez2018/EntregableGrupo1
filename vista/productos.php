@@ -69,18 +69,6 @@
 <!-- form Consultar -->
     <div class="container">
         <h2>Lista y actualización de productos</h2>
-<<<<<<< HEAD
-            <div class="sub-container">
-                <form class="formInsertar" method="POST" action="productos.php?accionProd=consultarProd" enctype="multipart/form-data">
-                    <input type="submit" value="Consultar">
-                <?php
-                    
-                    include __DIR__ . "/../control/productoControl.php";
-                    
-                ?> 
-                </form>
-            </div>
-=======
         <div class="sub-container">
             <form class="formConsultar" method="POST" action="productos.php?accionProd=consultarProd" enctype="multipart/form-data">   
                 <?php       
@@ -89,7 +77,6 @@
                 <input type="submit" value="Consultar todos los productos">
             <form>
         </div>
->>>>>>> f05c4ed53dd9ab42619a8a396e1e2483bd9a2e5a
     </div>
 
 </body>
