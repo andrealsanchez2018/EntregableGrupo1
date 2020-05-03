@@ -27,6 +27,9 @@
     margin: 0 auto;
     padding: 20px;
 }
+.formConsultar{
+    flex-direction: column;
+}
 
 .formInsertar  input[type="text"],
 .formInsertar  input[type="number"]{ 

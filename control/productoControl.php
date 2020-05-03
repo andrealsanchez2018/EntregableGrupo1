@@ -13,6 +13,16 @@ switch ($accionProd) {
     case 'consultarProd':
         listarProductos();
     break;
+    case 'filtrarProd':
+        filtrarProductos();
+    break;
+    case 'actualizarProd':
+        actualizaProductos();
+    break;
+    case 'eliminarProd':
+        eliminaProductos();
+    break;
+
 }
 } 
 
@@ -35,6 +45,7 @@ function guardarProducto(){
 
 
     $producto->agregarProducto($nombreProducto, $precio, $imgProducto, $descripcion, $cantidad, $idCategoria, $idSubCategoria, $idEstado,$idUsuario_cre, $idUsuario_mod/* , $u_fechaModifica, $u_fechaCreador */);
+
 }
 
 // listar productos
@@ -48,37 +59,197 @@ function listarProductos(){
 
 
         foreach ($listaProd as $productoEncontrado) :?>
-                <form class="card" method="POST" action="productos.php?accionProd=actualizarProd" enctype="multipart/form-data">
-                    <img class="images" src="<?php echo $productoEncontrado[3]; ?>" alt="">
-                    <input type="hidden" readonly="readonly" name="idProductoUpdate" id="idProductoUpdate" value="<?php echo $productoEncontrado[0]; ?>"/>
-                    <div class="row">
-                        <label class="labelsUpdate" for="nombreProductoUpdate">Nombre: </label>
-                        <input type="text" name="nombreProductoUpdate" id="nombreProductoUpdate" value="<?php echo $productoEncontrado[1]; ?>"/>
-                    </div>
-                    <div class="row">
-                        <label  class="labelsUpdate" for="precioUpdate">Precio: </label>
-                        <input type="text" name="precioUpdate" id="precioUpdate" value="<?php echo $productoEncontrado[2]; ?>"/>
-                    </div>
-                    <div class="row">
-                        <label class="labelsUpdate"  for="descripcionUpdate">Descripción: </label>
-                        <input type="text" name="descripcionUpdate" id="descripcionUpdate" value="<?php echo $productoEncontrado[4]; ?>" required/>
-                    </div>
-                    <div class="row">
-                        <label class="labelsUpdate"  for="cantidadUpdate">Cantidad: </label>
-                        <input type="text" name="cantidadUpdate" id="cantidadUpdate" value="<?php echo $productoEncontrado[5]; ?>" required/>
-                    </div>
-                    <!-- <div class="divFile">
-                        <input class="file" type="file" name="imgProducto" required/>    
-                    </div> -->
-                    <div class="buttonsActions">
-                        <input class="buttonUpdate" name="btnEnviar" type="submit" value="Actualizar contacto">
-                        <a id="Eliminar" href="eliminar.php?idContact=<?php echo $registro[0]; ?>">Eliminar contacto</a>
-                    </div>
+                <div class="card">
+                    <form  class="formConsultar" method="POST" action="productos.php?accionProd=actualizarProd" enctype="multipart/form-data">
+                        <img class="images" src="<?php echo $productoEncontrado[3]; ?>" alt="">
+                        <input type="hidden" readonly="readonly" name="idProductoUpdate" id="idProductoUpdate" value="<?php echo $productoEncontrado[0]; ?>"/>
+                        <div class="row">
+                            <label class="labelsUpdate" for="imgProductoUpdate">Link imagen: </label>
+                            <input type="text" name="imgProductoUpdate" id="imgProductoUpdate" value="<?php echo $productoEncontrado[3]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="nombreProductoUpdate">Nombre: </label>
+                            <input type="text" name="nombreProductoUpdate" id="nombreProductoUpdate" value="<?php echo $productoEncontrado[1]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="precioUpdate">Precio: </label>
+                            <input type="text" name="precioUpdate" id="precioUpdate" value="<?php echo $productoEncontrado[2]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate"  for="descripcionUpdate">Descripción: </label>
+                            <input type="text" name="descripcionUpdate" id="descripcionUpdate" value="<?php echo $productoEncontrado[4]; ?>" required/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate"  for="cantidadUpdate">Cantidad: </label>
+                            <input type="text" name="cantidadUpdate" id="cantidadUpdate" value="<?php echo $productoEncontrado[5]; ?>" required/>
+                        </div>
+
+
+                        <div class="row">
+                            <label class="labelsUpdate" for="idCategoriaUpdate">Categoria: </label>
+                            <input type="text" name="idCategoriaUpdate" id="idCategoriaUpdate" value="<?php echo $productoEncontrado[6]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="idSubCategoriaUpdate">Sub categoria: </label>
+                            <input type="text" name="idSubCategoriaUpdate" id="idSubCategoriaUpdate" value="<?php echo $productoEncontrado[7]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="idEstadoUpdate">Estado: </label>
+                            <input type="text" name="idEstadoUpdate" id="idEstadoUpdate" value="<?php echo $productoEncontrado[8]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="idUsuario_creUpdate">Creador: </label>
+                            <input type="text" name="idUsuario_creUpdate" id="idUsuario_creUpdate" value="<?php echo $productoEncontrado[9]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="idUsuario_modUpdate">Modificador: </label>
+                            <input type="text" name="idUsuario_modUpdate" id="idUsuario_modUpdate" value="<?php echo $productoEncontrado[10]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="fecha_modUpdate">Fecha modificación: </label>
+                            <input type="text" name="fecha_modUpdate" id="fecha_modUpdate" value="<?php echo $productoEncontrado[11]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="fecha_creUpdate">Fecha creación: </label>
+                            <input type="text" name="fecha_creUpdate" id="fecha_creUpdate" value="<?php echo $productoEncontrado[12]; ?>"/>
+                        </div>
+                        
+
+
+                        <div class="buttonsActions">
+                            <input type="submit" class="buttonUpdate" name="btnEnviar"  value="Actualizar contacto">
+                            <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
+                        </div>
+                    </form> 
                 </div>
         <?php endforeach;
+
+
+    }else {
+        echo 'No hay productos registrados';
+    }
+
+
+
+}
+
+
+
+function filtrarProductos(){
+    $producto = new Producto();
+
+    $itemQuery = $_POST['itemQuery'];
+    $filter = $_POST['filter'];
+
+    $result = $producto->filtrarProductos($itemQuery, $filter);
+
+    if ($result != 'error') {
+        $listaProd = $result;
+
+
+        foreach ($listaProd as $productoEncontrado) :?>
+                <div class="card">
+                    <form  class="formfiltrar" method="POST" action="productos.php?accionProd=actualizarProd" enctype="multipart/form-data">
+                        <img class="images" src="<?php echo $productoEncontrado[3]; ?>" alt="">
+                        <input type="hidden" readonly="readonly" name="idProductoUpdate" id="idProductoUpdate" value="<?php echo $productoEncontrado[0]; ?>"/>
+                        <div class="row">
+                            <label class="labelsUpdate" for="imgProductoUpdate">Link imagen: </label>
+                            <input type="text" name="imgProductoUpdate" id="imgProductoUpdate" value="<?php echo $productoEncontrado[3]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="nombreProductoUpdate">Nombre: </label>
+                            <input type="text" name="nombreProductoUpdate" id="nombreProductoUpdate" value="<?php echo $productoEncontrado[1]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="precioUpdate">Precio: </label>
+                            <input type="text" name="precioUpdate" id="precioUpdate" value="<?php echo $productoEncontrado[2]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate"  for="descripcionUpdate">Descripción: </label>
+                            <input type="text" name="descripcionUpdate" id="descripcionUpdate" value="<?php echo $productoEncontrado[4]; ?>" required/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate"  for="cantidadUpdate">Cantidad: </label>
+                            <input type="text" name="cantidadUpdate" id="cantidadUpdate" value="<?php echo $productoEncontrado[5]; ?>" required/>
+                        </div>
+
+
+                        <div class="row">
+                            <label class="labelsUpdate" for="idCategoriaUpdate">Categoria: </label>
+                            <input type="text" name="idCategoriaUpdate" id="idCategoriaUpdate" value="<?php echo $productoEncontrado[6]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="idSubCategoriaUpdate">Sub categoria: </label>
+                            <input type="text" name="idSubCategoriaUpdate" id="idSubCategoriaUpdate" value="<?php echo $productoEncontrado[7]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="idEstadoUpdate">Estado: </label>
+                            <input type="text" name="idEstadoUpdate" id="idEstadoUpdate" value="<?php echo $productoEncontrado[8]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="idUsuario_creUpdate">Creador: </label>
+                            <input type="text" name="idUsuario_creUpdate" id="idUsuario_creUpdate" value="<?php echo $productoEncontrado[9]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label class="labelsUpdate" for="idUsuario_modUpdate">Modificador: </label>
+                            <input type="text" name="idUsuario_modUpdate" id="idUsuario_modUpdate" value="<?php echo $productoEncontrado[10]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="fecha_modUpdate">Fecha modificación: </label>
+                            <input type="text" name="fecha_modUpdate" id="fecha_modUpdate" value="<?php echo $productoEncontrado[11]; ?>"/>
+                        </div>
+                        <div class="row">
+                            <label  class="labelsUpdate" for="fecha_creUpdate">Fecha creación: </label>
+                            <input type="text" name="fecha_creUpdate" id="fecha_creUpdate" value="<?php echo $productoEncontrado[12]; ?>"/>
+                        </div>
+                        
+
+
+                        <div class="buttonsActions">
+                            <input type="submit" class="buttonUpdate" name="btnEnviar"  value="Actualizar contacto">
+                            <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
+                        </div>
+                    </form> 
+                </div>
+        <?php endforeach;
+
 
     }else {
         echo 'No hay productos registrados';
     }
 }
+
+
+
+function actualizaProductos(){
+    $producto = new Producto();
+
+    $idProductoUpdate = $_POST['idProductoUpdate'];
+    $nombreProducto = $_POST['nombreProductoUpdate'];
+    $precio = $_POST['precioUpdate'];
+    $imgProducto = $_POST['imgProductoUpdate']; 
+    $descripcion = $_POST['descripcionUpdate']; 
+    $cantidad = $_POST['cantidadUpdate'];
+
+    $idCategoria = $_POST['idCategoriaUpdate'];
+    $idSubCategoria = $_POST['idSubCategoriaUpdate'];
+    $idEstado = $_POST['idEstadoUpdate'];
+    $idUsuario_cre = $_POST['idUsuario_creUpdate']; 
+    $idUsuario_mod = $_POST['idUsuario_modUpdate']; 
+    $fecha_mod = $_POST['fecha_modUpdate']; 
+    $fecha_cre = $_POST['fecha_creUpdate']; 
+
+
+    $producto->actualizarProductos($idProductoUpdate, $nombreProducto, $precio, $imgProducto, $descripcion, $cantidad, $idCategoria, $idSubCategoria, $idEstado, $idUsuario_cre, $idUsuario_mod, $fecha_mod, $fecha_cre);
+}
+
+
+function eliminaProductos(){
+    $producto = new Producto();
+
+    $idProd = $_GET['idProd'];
+
+    $producto->eliminarProductos($idProd);
+}
+
 ?>
