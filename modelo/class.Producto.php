@@ -58,7 +58,7 @@ class Producto{
 
         $sql = "UPDATE productos SET nombreProducto='$nombreProducto', precio='$precio', imgProducto='$imgProducto', descripcion='$descripcion', cantidad='$cantidad', idCategoria='$idCategoria', idSubCategoria='$idSubCategoria', idEstado='$idEstado', idUsuario_cre='$idUsuario_cre', idUsuario_mod='$idUsuario_mod', fecha_mod='$fecha_mod', fecha_cre='$fecha_cre' WHERE idProducto='$idProductoUpdate' ";
         
-        $db->query($sql)  ? header('Location: ../vista/productos.php?res=Producto_Actualizado') : header('Location: ../vista/productos.php?res=error') ;
+        $db->query($sql)  /* ? header('Location: ../vista/productos.php?res=Producto_Actualizado') : header('Location: ../vista/productos.php?res=error')  */;
            
     }
 
@@ -67,7 +67,7 @@ class Producto{
         $db = new Conexion();
 
         $sql = "DELETE FROM productos WHERE idProducto = '$idProd'";
-        $db->query($sql) ? header('Location: ../vista/productos.php?res=Producto_Eliminado') : header('Location: ../vista/productos.php?res=error') ;
+        $db->query($sql) /* ? header('Location: ../vista/productos.php?res=Producto_Eliminado') : header('Location: ../vista/productos.php?res=error')  */;
     }
 
 }
