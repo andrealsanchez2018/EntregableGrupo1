@@ -1,7 +1,6 @@
 <?php
 require(__DIR__ . '/../modelo/class.Subcategoria.php');
 
-
 //listarCategorias();
 //listarCategoriasEstado();
 
@@ -38,18 +37,30 @@ function listarSubCategorias()
         echo "<p>No hay categorias</p>";
     }
 }
-function desplegableEstado()
+function desplegableEstado($rol)
 {
     $subCategoria = new SubCategoria();
     $resultado = $subCategoria->mostrarEstado();
-    if ($resultado != 'error') {
-        echo "<select id='Estado' name='sb_estado'>";
-        foreach ($resultado as $Estado) {
-            echo "<option value=' $Estado[0]'> $Estado[1] </option>";
+    if ($rol == 'SuperAdmin') {
+        if ($resultado != 'error') {
+            echo "<select id='Estado' name='sb_estado'>";
+            foreach ($resultado as $Estado) {
+                echo "<option value=' $Estado[0]'> $Estado[1] </option>";
+            }
+            echo "</select>";
+        } else {
+            echo "<p>No hay categorias</p>";
         }
-        echo "</select>";
-    } else {
-        echo "<p>No hay categorias</p>";
+    } else if ($rol) {
+        if ($resultado != 'error') {
+            echo "<select id='Estado' name='sb_estado' disabled>";
+            foreach ($resultado as $Estado) {
+                echo "<option value=' $Estado[0]'> $Estado[1] </option>";
+            }
+            echo "</select>";
+        } else {
+            echo "<p>No hay categorias</p>";
+        }
     }
 }
 
