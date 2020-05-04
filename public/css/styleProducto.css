@@ -1,0 +1,248 @@
+
+/* Estilos del formulario para insertar productos */
+.container2{
+    width: 90%;
+    padding: 20px 0;
+    margin: 20px auto;
+    box-shadow: 0 .46875rem 2.1875rem rgba(90,97,105,.1),0 .9375rem 1.40625rem rgba(90,97,105,.1),0 .25rem .53125rem rgba(90,97,105,.12),0 .125rem .1875rem rgba(90,97,105,.1);
+    border-radius: 10px;
+    background-color:white;
+    background-color: #ffddbe;
+}
+.producto h2,.producto h3{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    color: rgb(194, 107, 40);
+    background-color: white;
+    }
+
+.sub-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color:white; */
+    background-color: #ffddbe;
+    
+}
+
+
+.formInsertar{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+
+    
+}
+
+.formInsertar  input[type="text"],
+.formInsertar  input[type="number"]{ 
+    width: 48%;
+    margin-top: 15px;
+    padding: 20px 0;
+    border: 0;
+    border-bottom: 1px solid #15303f;
+    font-size: 18px;
+    color: grey;
+     /*font-family:fantasy;*/
+}
+
+.formQuery{
+      
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 18px;
+    color: grey;
+    /*font-family:fantasy;*/
+    
+}
+.formQuery input[type="text"],
+.formQuery  input[type="number"]{ 
+    width: 48%;
+    margin-top: 15px;
+    padding: 20px 0;
+    border: 0;
+    border-bottom: 1px solid #15303f;
+    font-size: 18px;
+    color: grey;
+    background-color: #ffddbe;
+    /*font-family:fantasy;*/
+    
+}
+
+.formConsultar{
+     flex-direction: column;
+}
+
+
+
+.divFile{
+    display: flex;
+    border-bottom: 1px solid #15303f;
+    align-items: center;
+    width: 48%;
+    
+}
+
+.file{
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+
+.descripcionTextarea{
+    padding: 18px 0;
+     border: 0;
+    /* border-bottom: 1px solid #15303f; */  
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #ffddbe;
+    
+}
+
+.itemCategoria, .itemSubCategoria{
+    width: 48%;
+    padding: 20px 0;
+    margin-top: 15px;
+    border: 0;
+    border-bottom: 1px solid #15303f;
+    font-size: 18px;
+    color: grey;
+    background-color: #ffddbe;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*font-family:fantasy;*/
+    
+}
+
+.producto .form-control {
+    background-color: #ffddbe; 
+}
+
+/* input[type="submit"], #Eliminar{ /*Botones de header y sobre mi*/
+   /*  font-size: 18px;
+    color: #fff;
+    background: #e68051;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    /*font-family:fantasy;
+} */
+ 
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{ /* Este estilo toma todos los input de tipo text y email*/
+    border-bottom: 1px solid #ff6155; /*font-family:fantasy;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos del formulario para consultar productos */
+.card{
+    width: 400px; 
+    min-height:  750px;
+    margin: 20px;
+    box-shadow: 0 .46875rem 2.1875rem rgba(90,97,105,.1),0 .9375rem 1.40625rem rgba(90,97,105,.1),0 .25rem .53125rem rgba(90,97,105,.12),0 .125rem .1875rem rgba(90,97,105,.1)
+}
+
+
+.images{
+    width: 100%;
+    height: 300px;
+ }
+ 
+ .row{
+     display: flex;
+     width: 100%;
+     padding: 20px 0;
+     align-items: center;
+     justify-content: space-around;
+ }
+ .file{
+     display: block;
+     margin: 10px auto;
+ }
+ .labelsUpdate{
+    color: #bc3f17;
+    font-size: medium;
+    /*font-family:fantasy;*/
+ }
+/*  .buttonUpdate{
+     display: block;
+     margin: 0 auto;
+    
+     padding:  5px 30px;
+ } */
+ 
+  .card input[type="text"],
+ .card input[type="number"]{ 
+     border: 0;
+     border-bottom: 1px solid #15303f;
+     
+ }
+ 
+ .card input[type="text"]:focus, .card input[type="email"]:focus, .card input[type="number"]:focus{ /* Este estilo toma todos los input de tipo text y email*/
+     border-bottom: 1px solid #ff6155;/*font-family:fantasy;*/
+ }
+ 
+ /* Quitar flechas a input type number*/
+ input[type=number]::-webkit-outer-spin-button,
+ input[type=number]::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+ input[type=number] {
+     -moz-appearance:textfield;
+ }
+ 
+ 
+ .card .divFile{
+     width: 90%;
+     margin: 0 auto;
+ }
+ 
+  .buttonsActions{
+    /*  width: 100%; */
+     display: flex;
+     /*font-family:fantasy;*/
+ } 
+ 
+#Eliminar{
+    text-decoration: none;
+    
+    background-color:  rgb(194, 107, 40) ;
+    color: cornsilk;
+     margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* Cambios Andrea */
+
+/* @supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='checkbox'],
+    input[type='radio'] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+  } */
