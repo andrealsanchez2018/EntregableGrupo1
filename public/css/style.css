@@ -1,18 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
 .ingreso{
     top:20px;
 }
 .ingreso a{
     margin:  5px;
 }
+.h1-header{
+   font-family: 'Great Vibes', cursive;
+    color: rgb(194, 107, 40);
+    text-align: center;
+   font-size: 70px;
+   margin: 10px;
+   margin-top: 20px;
+}
 .carousel img{
     height: 400px;
 }
 footer{
-    background-color: rgb(116,148, 163);
+    background-color: 	rgb(53, 83, 83)/* 	rgb(79, 36, 20) *//* rgb(233, 168, 82) *//* rgb(117, 153, 127) */;
     
     color: white;
-    position: relative;
-    top: 100px;
+    /* position: relative; */
+    /* top: 100px; */
   
 
   }
@@ -35,25 +45,25 @@ h2{
     font-size: 20px;
     
 }
-/* Estilos login prueba */
-@import url('https://fonts.googleapis.com/css?family=Numans');
+/* Estilos login */
+
 
 
 .log,.login{
-background-image: url('../img/fondo_login.jpg');
+background-image: url('../img/fondo_login2.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 600px;
 }
 
-.container{
+/* .container{
 height: 600px;
-}
+} */
 
-.card{
+.login .card{
 height: 370px;
 width: 400px;
-background-color: rgba(53, 14, 99, 0.5) ;
+background-color: rgb(29, 68, 68,0.5) ;
 }
 .card-header h3,.links{
 color: white;
@@ -86,4 +96,21 @@ margin-left: 4px;
    font-size: 70px;
    margin: 10px;
    margin-top: 20px;
+}
+a{
+    color: rgb(53, 83, 83);
+}
+.login a{
+    color: #007bff;
+}
+.btn-light{
+    background-color:  rgb(194, 107, 40) ;
+    color: cornsilk;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn-light:hover{
+    background-color: rgb(53, 83, 83);
+    color: white;
 }

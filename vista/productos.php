@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/styleproducto.css">
     <title>Productos : Lista General</title>
 </head>
-<body>
-
+<body class="container producto">
+<?php include('header.php');?>
 <!-- form crear -->
-    <div class="container">
+    <div class="container2 ">
 
-    <?php include('header.php');?>
+    
 
         <h2>Insertar productos</h2>
         <div class="sub-container">
         <form class="formInsertar" method="POST" action="productos.php?accionProd=crearProd" enctype="multipart/form-data">
-                <input type="text" name="nombreProducto" placeholder="Ingrese nombre producto"/>
-                <input type="text" name="precio" placeholder="Ingrese precio"/>
-                <input type="text" name="imgProducto" placeholder="Ingrese URL imagen producto"/>
-                <input type="text" name="cantidad" placeholder="Ingrese cantidad"/>
+                <input class="form-control " type="text" name="nombreProducto" placeholder="Ingrese nombre producto"/>
+                <input class="form-control " type="text" name="precio" placeholder="Ingrese precio"/>
+                <input class="form-control " type="text" name="imgProducto" placeholder="Ingrese URL imagen producto"/>
+                <input class="form-control " type="text" name="cantidad" placeholder="Ingrese cantidad"/>
 
                 <textarea class="descripcionTextarea" type="text" name="descripcion" placeholder="Ingrese descripcion:"></textarea>
                 
@@ -40,14 +40,14 @@
                 <input type="hidden" value="1" name="idUsuario_cre" placeholder="Usuario creador"/>
                 <input type="hidden" value="1" name="idUsuario_mod" placeholder="Usuario modificador"/>
 
-                <input type="submit" value= "Insertar producto" name="enter"/>
+                <input class="btn btn-light" type="submit" value= "Insertar producto" name="enter"/>
             </form>
         </div>
     </div>
 
 
     <!-- Section de filtrar contacto -->
-    <div class="container">
+    <div class="container2">
     <h3>Filtrar contactos</h3>
         <div class="sub-container">    
          <form class="formQuery" method="POST" action="productos.php?accionProd=filtrarProd" enctype="multipart/form-data">
