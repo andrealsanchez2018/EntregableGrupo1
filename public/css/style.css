@@ -106,10 +106,10 @@ a{
 .btn-light{
     background-color:  rgb(194, 107, 40) ;
     color: cornsilk;
-    margin: 20px auto;
+   /*  margin: 20px auto;
     padding: 10px;
-    border-radius: 10px;
-}
+    border-radius: 10px;*/
+} 
 .btn-light:hover{
     background-color: rgb(53, 83, 83);
     color: white;

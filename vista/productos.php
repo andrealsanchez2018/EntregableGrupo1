@@ -52,13 +52,13 @@
         <div class="sub-container">    
          <form class="formQuery" method="POST" action="productos.php?accionProd=filtrarProd" enctype="multipart/form-data">
             <label for="" style="color: gray;">Filtrar por:</label>
-            <select class="itemQuery" name="itemQuery">
+            <select class="itemQuery form-control" name="itemQuery">
                 <option value="idProducto" selected>Id producto</option> 
                 <option value="nombreProducto">Nombre producto</option>
                 <option value="precio">Precio</option>
             </select>
-            <input type="text" name="filter" id="filter" placeholder="Dato a consultar:" required>
-            <input type="submit" value="Buscar producto"/>
+            <input  class="form-control " type="text" name="filter" id="filter" placeholder="Dato a consultar:" required>
+            <input  class="btn btn-light" type="submit" value="Buscar producto"/>
             </form>
         </div>
     </div>

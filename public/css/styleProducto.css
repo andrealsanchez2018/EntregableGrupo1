@@ -185,12 +185,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
     font-size: medium;
     /*font-family:fantasy;*/
  }
- .buttonUpdate{
+/*  .buttonUpdate{
      display: block;
      margin: 0 auto;
     
      padding:  5px 30px;
- }
+ } */
  
   .card input[type="text"],
  .card input[type="number"]{ 
@@ -220,17 +220,17 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
  }
  
   .buttonsActions{
-     width: 100%;
+    /*  width: 100%; */
      display: flex;
      /*font-family:fantasy;*/
  } 
  
 #Eliminar{
     text-decoration: none;
-    font-size: 20px;
-    color: #fff;
-    background: #e68051;
-    margin: 20px auto;
+    
+    background-color:  rgb(194, 107, 40) ;
+    color: cornsilk;
+     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
