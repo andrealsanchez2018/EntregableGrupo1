@@ -1,4 +1,4 @@
-<?php include('../vista/header.php'); ?>
+<?php include('../vista/header.php'); #prueba?>
 
 <body class="container">
     <?php include('../control/categoriaControl.php');
