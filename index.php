@@ -18,18 +18,19 @@ if(isset($_SESSION['loggedin']))
     <!-- Mi hoja de estilos, debe estar creada en la carpeta css -->
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/fontello.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- letra -->
+    
 </head>
 
 <body class="container">
 <header class="principal">
         <div class="row">
-            <div class="col-md-3 col-3"><img src="public/img/logo.png" salt="" style="height: 100px;"></div>
-            <div class="col-md-6 col-6">
-                <img src="public/img/nombre.png" salt="" style="height: 100px; width: 400px;">
+            <div class="col-md-3 col-3"><img src="public/img/logo3.png" salt="" style="height: 100px;"></div>
+            <div class="col-md-6 col-9">
+            <h1 class="h1-header">Clothing Bictia</h1>
 
             </div>
-            <div class="ingreso col-md-3 col-3">
+            <div class="ingreso col-md-3 col-12">
                 <?php if(!isset($logueado)):?>
                 <span><a href="vista/login.php">Iniciar Sesión </a></span>
                 <span><a href="">Registrarme</a></span>
