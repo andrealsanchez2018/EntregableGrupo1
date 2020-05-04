@@ -19,7 +19,7 @@
     <?php listarSubCategorias(); ?>
     <?php listarSubCategoriasEstado();
     desplegableSubCategoria(); ?>
-
+    <?php include('footer.php');?>
 </body>
 
 </html>

@@ -24,6 +24,7 @@
     }
 
 ?>
+
     <!-- Formulario del producto -->
     <center>
         <h2>Administración de Usuario</h2>
