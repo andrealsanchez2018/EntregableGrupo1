@@ -29,7 +29,7 @@ class Usuario
     {
         $db = new Conexion();
         $sql ="Insert into usuarios(nombre,correo,password,idRol,idEstado) Values ('$nombre','$correo','$pass',$rol,$estado)";
-        $db->query($sql)? header('location:../index.php'):header('location:../index.php?err=FCU');
+        $db->query($sql);//? header('location:../index.php'):header('location:../index.php?err=FCU');
         
     }
     
@@ -37,7 +37,7 @@ class Usuario
     {
         $db = new Conexion();
         $sql ="UPDATE usuarios SET nombre='$nombre',correo='$correo',password='$pass',idRol='$rol',idEstado='$estado' WHERE idUsuario='$id'";
-        $db->query($sql)? header('location:../vistas/index.php'):header('location:../vistas/index.php?err=FMU');
+        $db->query($sql);//? header('location:../vistas/index.php'):header('location:../vistas/index.php?err=FMU');
         
     }
     
@@ -45,7 +45,7 @@ class Usuario
     {
         $db = new Conexion();
         $sql ="DELETE FROM usuarios WHERE idUsuario='$id'";
-        $db->query($sql)? header('location:../vistas/index.php'):header('location:../vistas/index.php?err=FEU');
+        $db->query($sql);//? header('location:../vistas/index.php'):header('location:../vistas/index.php?err=FEU');
         
     }
     
@@ -55,16 +55,7 @@ class Usuario
         $sql= "SELECT  u.idUsuario, u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol order by u.nombre asc ";
         //select de usuarios activos con rol
         return $result = $db->query($sql);
-        //$result;
-        
-        /*if($result->num_rows > 0)
-        {
-            $row = $result->fetch_array();
-            return $row;
-        }else
-        {
-            return 'error';
-        }*/
+       
         
     }
     
@@ -79,7 +70,7 @@ class Usuario
     public function encontrarUsuario($clave)
     {
         $db = new Conexion();
-        $sql= "SELECT u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol where u.nombre like '%$clave%' or u.correo like '%$clave%' or r.rol like '%$clave%' or e.estado like '%$clave%' order by u.nombre asc";
+        $sql= "SELECT u.idUsuario, u.nombre, u.correo, u.password,r.rol ,e.estado FROM usuarios as u INNER JOIN estados as e ON u.idEstado = e.idEstado INNER JOIN roles as r on r.idRol = u.idRol where u.nombre like '%$clave%' or u.correo like '%$clave%' or r.rol like '%$clave%' or e.estado like '%$clave%' order by u.nombre asc";
         return $result = $db->query($sql);
     }
 }
