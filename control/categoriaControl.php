@@ -45,21 +45,19 @@ function desplegableEstado($rol)
     if ($rol == 'SuperAdmin') {
 
         if ($resultado != 'error') {
-            echo "<select id='Estado' name='c_estado' >";
+
             foreach ($resultado as $Estado) {
                 echo "<option value=' $Estado[0]'> $Estado[1] </option>";
             }
-            echo "</select>";
         } else {
             echo "<p>No hay categorias</p>";
         }
     } else if ($rol == 'Admin') {
         if ($resultado != 'error') {
-            echo "<select id='Estado' name='c_estado' disabled>";
+
             foreach ($resultado as $Estado) {
                 echo "<option value=' $Estado[0]'> $Estado[1] </option>";
             }
-            echo "</select>";
         } else {
             echo "<p>No hay categorias</p>";
         }
@@ -81,16 +79,18 @@ function desplegableCategoria()
     }
 }
 
-function listarCategoriasEstado()
+function listarCategoriasEstado($rol)
 {
     $categoria = new Categoria();
     $resultado = $categoria->mostrarCategoriasEstado();
+
+
     if ($resultado != 'error') {
         foreach ($resultado as $categoriaEstado) {
-            echo "<br>";
-            echo "<span>$categoriaEstado[0] </span>";
-            echo "<span>$categoriaEstado[1] </span>";
-            echo "<span>$categoriaEstado[2]</span>";
+            echo "<tr>";
+            echo "<td>$categoriaEstado[0] </td>";
+            echo "<td>$categoriaEstado[1] </td>";
+            echo "<td>$categoriaEstado[2]</td>";
         }
     } else {
         echo "<p>No hay categorias</p>";
@@ -113,7 +113,7 @@ function editarCategoria()
     $c_rol = $_POST['rol'];
 
     $categoria = new Categoria();
-    $categoria->actualizarCategoria($c_id, $c_nombre, $c_estado,$c_rol);
+    $categoria->actualizarCategoria($c_id, $c_nombre, $c_estado, $c_rol);
 }
 function eliminarCategoria()
 {
