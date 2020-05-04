@@ -35,7 +35,8 @@
                 ?>
                 <form action="" id="Registro">
                     <div class="form-group row">
-                        <input class="form-control " type="number" id="idusuario" placeholder="Código de usuario" name="idusuario">
+                        
+                        <input class="form-control " type="number" id="idusuario" placeholder="Código de usuario" name="idusuario" readonly>
                         <input class="form-control " type="text" id="nombre" placeholder="Nombre de usuario" name="nombre">
                         <input class="form-control " type="text" id="correo" placeholder="Correo" name="correo">
                         <input class="form-control " type="text" id="pass" placeholder="Contraseña" name="pass">

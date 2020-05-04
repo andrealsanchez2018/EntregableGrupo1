@@ -68,6 +68,14 @@ class Usuario
         
     }
     
+    public function consultarUsuario($id)
+    {
+        $db = new Conexion();
+        $sql= "SELECT  * FROM usuarios where idUsuario ='$id'";
+        //select de usuarios activos con rol
+        return $result = $db->query($sql);
+    }
+    
     public function encontrarUsuario($clave)
     {
         $db = new Conexion();

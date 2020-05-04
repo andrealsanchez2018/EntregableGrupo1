@@ -20,6 +20,8 @@ switch($accion)
         break;
     case 'close':Logout();
         break;
+    case 'cons': consultar();
+        break;
 }
 
 function crear()
@@ -60,10 +62,18 @@ function Leer()
             <td>".$res['password']."</td>
             <td>".$res['rol']."</td>
             <td>".$res['estado']."</td>
-            <td><button>Modificar</button><button class='icon-trash-empty'></button></td>
+            <td><button id='mod".$res['idUsuario']."'>Modificar</button><button class='icon-trash-empty'></button></td>
             </tr>";
     }
     
+}
+
+function consultar()
+{
+    $usuario=new Usuario();
+    $id = $_POST['idUsuario'];
+    $res = $usuario->consultarUsuario($id);
+    echo json_encode($res);
 }
 
 function modificar()
@@ -77,6 +87,7 @@ function modificar()
     
     $usuario = new Usuario();
     $usuario->modificarUsuario($id,$nombre,$correo,$pass,$rol,$estado);
+    
 }
 
 function Eliminar()
