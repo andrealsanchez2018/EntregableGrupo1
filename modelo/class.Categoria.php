@@ -8,7 +8,7 @@ class Categoria{
     }
     public function mostrarCategorias(){
         $db = new Conexion();
-        $sql = "SELECT * FROM categorias";
+        $sql = "SELECT * FROM categorias where idEstado=1";
         $resultado = $db ->query($sql);
 
         if ($resultado->num_rows>0){
