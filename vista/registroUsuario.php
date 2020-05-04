@@ -14,7 +14,7 @@ $rol = @$_SESSION['user']['rol'];*/
 </head>
 
 <body class="container">
-    <?php include 'header.php'  ?>
+    <?php include 'header.php'; ?>
     <div class="d-flex justify-content-center h-100" id= "registroForm">
         <div class="card">
             <div class="card-header">
@@ -56,7 +56,7 @@ $rol = @$_SESSION['user']['rol'];*/
     </div>
     
    
-    <?php include 'footer.php' ?>
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>

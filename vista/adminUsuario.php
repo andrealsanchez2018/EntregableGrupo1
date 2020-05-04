@@ -24,6 +24,7 @@
     }
 
 ?>
+
     <!-- Formulario del producto -->
     <center>
         <h2>Administración de Usuario</h2>
@@ -33,7 +34,7 @@
             <div class="col-md-3 col-12">
                 <?php //include('registroUsuario.php')
                 ?>
-                <form action="" id="Registro">
+                <form id="Registro">
                     <div class="form-group row">
                         
                         <input class="form-control " type="number" id="idusuario" placeholder="Código de usuario" name="idusuario" readonly>
@@ -49,15 +50,19 @@
 
                         <select class="form-control" name="estado" id="estado" name="estado">
                             <option value="1">Activo</option>
-                            <option value="0">Inactivo</option>
+                            <option value="2">Inactivo</option>
                         </select>
                         <?php  else: ?>
                         <input type="hidden" id="rol" name="rol" value="1">
                         <?php endif;  ?>
 
                         <center>
-                            <button type="submit" class="btn btn-light">Modificar</button>
-                            <button type="submit" class="btn btn-light">Cancelar</button>
+                            <select class="form-control" name="modificar" id="modificar">
+                                <option value="ins">Ingresar</option>
+                                <option value="mod">Modificar</option>
+                            <select>
+                            <input type="submit" class="btn btn-light" value="Ejecutar">
+                            <button class="btn btn-light" id="cancel">Cancelar</button>
                         </center>
                     </div>
 
@@ -67,7 +72,7 @@
             <!-- sección de opciones -->
             <div class="col-md-9 col-12">
                 <form class="form-inline my-2 ">
-                    <input class="buscar mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+                    <input class="buscar mr-sm-2" type="text" id="buscar"placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 
                 </form>

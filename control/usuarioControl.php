@@ -1,4 +1,6 @@
 <?php
+
+
 require(__DIR__.'/../modelo/class.Usuario.php');
 
 @$accion = $_REQUEST['mod'];
@@ -43,7 +45,12 @@ function crear()
         $estado = 1;
     }
     $usuario -> crearUsuario($nombre,$correo,$pass,$rol,$estado);
-    logueo($correo,$pass);
+    session_start();
+    //echo isset($_SESSION['loggedin']);
+    if(!isset($_SESSION['loggedin']))
+       {
+           logueo($correo,$pass);
+       }
     
     
 }
@@ -62,18 +69,20 @@ function Leer()
             <td>".$res['password']."</td>
             <td>".$res['rol']."</td>
             <td>".$res['estado']."</td>
-            <td><button id='mod".$res['idUsuario']."'>Modificar</button><button class='icon-trash-empty'></button></td>
+            <td><button name='mod".$res['idUsuario']."' >Modificar</button><button class='icon-trash-empty' name='del".$res['idUsuario']."' nom='".$res['nombre']."'></button></td>
             </tr>";
     }
+    echo "<script type='text/javascript' src='../public/js/Asynclvl2.js'></script>";
     
 }
 
 function consultar()
 {
     $usuario=new Usuario();
-    $id = $_POST['idUsuario'];
+    $id = $_POST['id'];
     $res = $usuario->consultarUsuario($id);
-    echo json_encode($res);
+    //print_r($res->fetch_assoc());
+    echo json_encode($res->fetch_assoc());
 }
 
 function modificar()
@@ -92,7 +101,7 @@ function modificar()
 
 function Eliminar()
 {
-    $id=$_POST['idusuario'];
+    $id=$_POST['id'];
     
     $usuario = new Usuario();
     $usuario->eliminarUsuario($id);
@@ -103,9 +112,22 @@ function encontrar()
     
     $clave=$_POST['buscar'];
     $usuario = new Usuario();
-    $usuario->encontrarUsuario($clave);
+    $result = $usuario->encontrarUsuario($clave);
     
-    
+    foreach($result as $res)
+    {
+        
+        echo "<tr>
+            <th scope='row'>".$res['idUsuario']."</th>
+            <td>".$res['nombre']."</td>
+            <td>".$res['correo']."</td>
+            <td>".$res['password']."</td>
+            <td>".$res['rol']."</td>
+            <td>".$res['estado']."</td>
+            <td><button name='mod".$res['idUsuario']."' >Modificar</button><button class='icon-trash-empty' name='del".$res['idUsuario']."' nom='".$res['nombre']."'></button></td>
+            </tr>";
+    }
+    echo "<script type='text/javascript' src='../public/js/Asynclvl2.js'></script>";
 }
 
 function logueo()

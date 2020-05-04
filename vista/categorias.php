@@ -42,7 +42,7 @@
         </table>
     </div>
     <?php desplegableCategoria(); ?>
-
+    <?php include('footer.php');?>
 </body>
 
 </html>
