@@ -13,12 +13,12 @@
         <h2>Insertar productos</h2>
         <div class="sub-container">
         <form class="formInsertar" method="POST" action="productos.php?accionProd=crearProd" enctype="multipart/form-data">
-                <input type="text" name="nombreProducto" placeholder="Nombre producto:"/>
-                <input type="text" name="precio" placeholder="Precio:"/>
-                <input type="text" name="imgProducto" placeholder="Imagen producto:"/>
-                <input type="text" name="cantidad" placeholder="Cantidad:"/>
+                <input type="text" name="nombreProducto" placeholder="Ingrese nombre producto"/>
+                <input type="text" name="precio" placeholder="Ingrese precio"/>
+                <input type="text" name="imgProducto" placeholder="Ingrese URL imagen producto"/>
+                <input type="text" name="cantidad" placeholder="Ingrese cantidad"/>
 
-                <textarea class="descripcionTextarea" type="text" name="descripcion" placeholder="Descripcion:"></textarea>
+                <textarea class="descripcionTextarea" type="text" name="descripcion" placeholder="Ingrese descripcion:"></textarea>
                 
                 <select class="itemCategoria" name="idCategoria">
                     <option value="" selected>Seleccione categoria:</option>
@@ -28,7 +28,7 @@
                 </select>
                 
                 <select class="itemSubCategoria" name="idSubCategoria">
-                    <option value="" selected>Seleccione categoria:</option>
+                    <option value="" selected>Seleccione subcategoria:</option>
                     <option value="1">Pantalon</option> 
                     <option value="2">Camisa</option>
                     <option value="3">Zapatos</option>
@@ -45,8 +45,9 @@
 
     <!-- Section de filtrar contacto -->
     <div class="container">
-        <form class="formQuery" method="POST" action="productos.php?accionProd=filtrarProd" enctype="multipart/form-data">
-            <h3>Filtrar contactos</h3>
+    <h3>Filtrar contactos</h3>
+        <div class="sub-container">    
+         <form class="formQuery" method="POST" action="productos.php?accionProd=filtrarProd" enctype="multipart/form-data">
             <label for="" style="color: gray;">Filtrar por:</label>
             <select class="itemQuery" name="itemQuery">
                 <option value="idProducto" selected>Id producto</option> 
@@ -55,7 +56,8 @@
             </select>
             <input type="text" name="filter" id="filter" placeholder="Dato a consultar:" required>
             <input type="submit" value="Buscar producto"/>
-        </form>
+            </form>
+        </div>
     </div>
 
 
