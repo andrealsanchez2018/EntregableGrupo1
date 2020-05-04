@@ -117,7 +117,7 @@ function listarProductos(){
 
 
                         <div class="buttonsActions">
-                            <input type="submit" class="buttonUpdate" name="btnEnviar"  value="Actualizar contacto">
+                            <input type="submit" class="buttonUpdate btn btn-light" name="btnEnviar"  value="Actualizar contacto">
                             <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
                         </div>
                     </form> 
@@ -206,7 +206,7 @@ function filtrarProductos(){
 
 
                         <div class="buttonsActions">
-                            <input type="submit" class="buttonUpdate" name="btnEnviar"  value="Actualizar contacto">
+                            <input type="submit" class="buttonUpdate btn btn-light" name="btnEnviar"  value="Actualizar contacto">
                             <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
                         </div>
                     </form> 
