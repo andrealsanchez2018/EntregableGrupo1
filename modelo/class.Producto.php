@@ -14,7 +14,7 @@ class Producto{
 
         $sql = "INSERT INTO productos (nombreProducto, precio, imgProducto, descripcion, cantidad, idCategoria, idSubCategoria, idEstado, idUsuario_cre, idUsuario_mod , fecha_mod, fecha_cre) VALUES ('$nombreProducto', '$precio', '$imgProducto', '$descripcion', '$cantidad', '$idCategoria', '$idSubCategoria', '$idEstado','$idUsuario_cre', '$idUsuario_mod', NOW(), NOW())";
         
-        $db->query($sql)  ? header('Location: ../vista/productos.php?res=Producto_Agregado') : header('Location: ../vista/productos.php?res=error') ;
+        $db->query($sql); /*  ? header('Location: ../vista/productos.php?res=Producto_Agregado') : header('Location: ../vista/productos.php?res=error') ; */
     }
 
     public function mostrarProductos(){
