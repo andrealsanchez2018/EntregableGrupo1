@@ -1,29 +1,28 @@
-*{
-    background-color: #ffddbe;
-}
+
 /* Estilos del formulario para insertar productos */
-.container{
+.container2{
     width: 90%;
     padding: 20px 0;
     margin: 20px auto;
     box-shadow: 0 .46875rem 2.1875rem rgba(90,97,105,.1),0 .9375rem 1.40625rem rgba(90,97,105,.1),0 .25rem .53125rem rgba(90,97,105,.12),0 .125rem .1875rem rgba(90,97,105,.1);
     border-radius: 10px;
     background-color:white;
-
+    background-color: #ffddbe;
 }
-h2,h3{
+.producto h2,.producto h3{
     font-size: 50px;
     text-align: center;
-    color: #bc3f17;
+    font-family: 'Great Vibes', cursive;
+    color: rgb(194, 107, 40);
     background-color: white;
-    font-family:fantasy;
-}
+    }
 
 .sub-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color:white;
+    /* background-color:white; */
+    background-color: #ffddbe;
     
 }
 
@@ -48,7 +47,7 @@ h2,h3{
     border-bottom: 1px solid #15303f;
     font-size: 18px;
     color: grey;
-    font-family:fantasy;
+     /*font-family:fantasy;*/
 }
 
 .formQuery{
@@ -60,7 +59,7 @@ h2,h3{
     padding: 20px;
     font-size: 18px;
     color: grey;
-    font-family:fantasy;
+    /*font-family:fantasy;*/
     
 }
 .formQuery input[type="text"],
@@ -72,7 +71,8 @@ h2,h3{
     border-bottom: 1px solid #15303f;
     font-size: 18px;
     color: grey;
-    font-family:fantasy;
+    background-color: #ffddbe;
+    /*font-family:fantasy;*/
     
 }
 
@@ -98,13 +98,12 @@ h2,h3{
 
 .descripcionTextarea{
     padding: 18px 0;
-    border: 0;
-    border-bottom: 1px solid #15303f;  
+     border: 0;
+    /* border-bottom: 1px solid #15303f; */  
     margin-bottom: 20px;
     width: 100%;
     font-size: 18px;
-    color: grey;
-    font-family:fantasy; 
+    background-color: #ffddbe;
     
 }
 
@@ -119,24 +118,28 @@ h2,h3{
     background-color: #ffddbe;
     -moz-appearance: none;
     -webkit-appearance: none;
-    font-family:fantasy;
-
+    /*font-family:fantasy;*/
     
 }
 
-input[type="submit"], #Eliminar{ /*Botones de header y sobre mi*/
-    font-size: 18px;
+.producto .form-control {
+    background-color: #ffddbe; 
+}
+
+/* input[type="submit"], #Eliminar{ /*Botones de header y sobre mi*/
+   /*  font-size: 18px;
     color: #fff;
     background: #e68051;
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
-    font-family:fantasy;
-}
-
+    
+    /*font-family:fantasy;
+} */
+ 
 input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{ /* Este estilo toma todos los input de tipo text y email*/
-    border-bottom: 1px solid #ff6155; font-family:fantasy;
+    border-bottom: 1px solid #ff6155; /*font-family:fantasy;*/
 }
 
 
@@ -180,7 +183,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
  .labelsUpdate{
     color: #bc3f17;
     font-size: medium;
-    font-family:fantasy;
+    /*font-family:fantasy;*/
  }
  .buttonUpdate{
      display: block;
@@ -189,15 +192,15 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
      padding:  5px 30px;
  }
  
- .card input[type="text"],
- .card input[type="number"]{ /* Este estilo toma todos los input de tipo text y email*/
+  .card input[type="text"],
+ .card input[type="number"]{ 
      border: 0;
      border-bottom: 1px solid #15303f;
      
  }
  
  .card input[type="text"]:focus, .card input[type="email"]:focus, .card input[type="number"]:focus{ /* Este estilo toma todos los input de tipo text y email*/
-     border-bottom: 1px solid #ff6155;font-family:fantasy;
+     border-bottom: 1px solid #ff6155;/*font-family:fantasy;*/
  }
  
  /* Quitar flechas a input type number*/
@@ -216,11 +219,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
      margin: 0 auto;
  }
  
- .buttonsActions{
+  .buttonsActions{
      width: 100%;
      display: flex;
-     font-family:fantasy;
- }
+     /*font-family:fantasy;*/
+ } 
  
 #Eliminar{
     text-decoration: none;
