@@ -18,7 +18,7 @@
     require_once('header.php'); 
 
     //require(__DIR__ . '/../control/usuarioControl.php');
-    if(checkRol()=='Usuauro')
+    if(checkRol()=='Usuario'||checkRol()=="")
     {
         header('location: ../index.php?err=SBIA');
     }
@@ -33,7 +33,7 @@
             <div class="col-md-3 col-12">
                 <?php //include('registroUsuario.php')
                 ?>
-                <form action="">
+                <form action="" id="Registro">
                     <div class="form-group row">
                         <input class="form-control " type="number" id="idusuario" placeholder="Código de usuario" name="idusuario">
                         <input class="form-control " type="text" id="nombre" placeholder="Nombre de usuario" name="nombre">

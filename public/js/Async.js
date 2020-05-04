@@ -1,13 +1,26 @@
 // JavaScript Document
 $(document).ready(function(){
    
-    function asyncLoad(accion)
+    function asyncLoad(file,accion)
     {
        
-        $.post('../control/usuarioControl.php',{mod:accion}).done(function(msg){
+        $.post(file,accion).done(function(msg){
            $('#result').html(msg);
         });
     }
     
-    asyncLoad('leer');
+    $('#registro').submit(function(event){
+        event.preventDefault();
+        let nombre = $('#idUsuario').val();
+        let correo = $('#correo').val();
+        let pass = $('#pass').val();
+        let rol = $('#rol').val();
+        let estado = $('#estado').val();
+        
+        asyncLoad('../control/usuarioControl.php',{})
+        
+        
+    });
+    
+    asyncLoad('../control/usuarioControl.php',{mod:'leer'});
 });

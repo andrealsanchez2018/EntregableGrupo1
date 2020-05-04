@@ -1,7 +1,7 @@
 <?php 
-session_start();
+/*session_start();
 @$_SESSION['user']['nombre'];
-$rol = @$_SESSION['user']['rol'];
+$rol = @$_SESSION['user']['rol'];*/
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $rol = @$_SESSION['user']['rol'];
                     <input class="form-control " type="password" name="pass" id="pass" placeholder="Contraseña">
                     <input type="hidden" value="ins" name="mod">
 
-                    <?php if ($rol == 'admin' || $rol == 'SuperAdmin') :  ?>
+                    <?php if (checkRol() == 'admin' || checkRol() == 'SuperAdmin') :  ?>
                     <select class="form-control" name="rol" id="rol" name="rol">
                         <option value="3">Super Admin</option>
                         <option value="2">Administrador</option>
