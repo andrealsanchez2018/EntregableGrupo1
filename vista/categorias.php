@@ -4,7 +4,7 @@
     <?php include('../control/categoriaControl.php');
     $rol = checkRol();
     ?>
-    <?php include('header.php');?>
+    
     <form action="/EntregableGrupo1/control/categoriaControl.php" method="post">
         <input type="text" id="c_id" name="c_id" placeholder="Id">
         <br>
@@ -12,9 +12,9 @@
         <br>
         <?php desplegableEstado($rol); ?>
         <br>
-        <input type="submit" value="Registrar" name="c_enter">
-        <input type="submit" value="Actualizar" name="c_enter">
-        <input type="submit" value="Eliminar" name="c_enter">
+        <input class="btn btn-light" type="submit" value="Registrar" name="c_enter">
+        <input class="btn btn-light"  type="submit" value="Actualizar" name="c_enter">
+        <input class="btn btn-light"  type="submit" value="Eliminar" name="c_enter">
 
     </form>
     <?php listarCategorias(); ?>
