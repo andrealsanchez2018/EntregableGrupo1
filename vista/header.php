@@ -60,21 +60,18 @@ function checkRol()
             <div class="col-md-12 col-12">
             <ul class="nav shadow-sm p-2 mb-4 bg-white rounded">
                 <?php ?>    
-                <li class="nav-item">
-                    <a class="nav-link active" href="adminUsuario.php">Usuario</a>
-                </li>
-                
+                             
                     <li class="nav-item">
                         <a class="nav-link active" href="adminUsuario.php">Usuario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Productos</a>
+                        <a class="nav-link " href="productos.php">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categorías</a>
+                        <a class="nav-link" href="categorias.php">Categorías</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Subcategorías</a>
+                        <a class="nav-link" href="subCategorias.php">Subcategorías</a>
                     </li>
                                        
                 </ul>
