@@ -114,3 +114,9 @@ a{
     background-color: rgb(53, 83, 83);
     color: white;
 }
+
+.footer h3{
+    background-color: 	rgb(53, 83, 83);
+    color: white;
+    align-items: center;
+}
