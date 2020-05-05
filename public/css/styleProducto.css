@@ -8,7 +8,8 @@
     background-color:white;
     background-color: #ffddbe;
 }
-.producto h2,.producto h3{
+
+.h2producto, .h3producto{
     font-size: 50px;
     text-align: center;
     font-family: 'Great Vibes', cursive;
@@ -172,7 +173,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
      display: flex;
      width: 100%;
      padding: 20px 0;
-     align-items: center;
+     /* align-items: center; */ /* Esto desorganiza el footer */
      justify-content: space-around;
  }
  .file{
@@ -184,12 +185,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
     font-size: medium;
     /*font-family:fantasy;*/
  }
-/*  .buttonUpdate{
+/*   .buttonUpdate{
      display: block;
      margin: 0 auto;
     
      padding:  5px 30px;
- } */
+ }  */
  
   .card input[type="text"],
  .card input[type="number"]{ 
@@ -224,7 +225,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
      /*font-family:fantasy;*/
  } 
  
-#Eliminar{
+#Eliminar, #actualizar, #insertar, #buscar, #todos{
     text-decoration: none;
     
     background-color:  rgb(194, 107, 40) ;
@@ -236,21 +237,4 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus{
 }
 
 
-/* Cambios Andrea */
-
-/* @supports(-webkit-appearance: none) or (-moz-appearance: none) {
-    input[type='checkbox'],
-    input[type='radio'] {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-    }
-  } */
-  footer{
-    background-color: 	rgb(53, 83, 83)/* 	rgb(79, 36, 20) *//* rgb(233, 168, 82) *//* rgb(117, 153, 127) */;
-    
-    color: white;
-    /* position: relative; */
-    /* top: 100px; */
-  
-
-  }
+   
