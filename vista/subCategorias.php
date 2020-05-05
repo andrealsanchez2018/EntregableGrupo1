@@ -1,6 +1,8 @@
-<?php include('../vista/header.php'); #prueba 
+<?php include('../vista/header.php'); #prueba
 ?>
-
+<?php $rol = checkRol();
+    if($rol=='Admin'||$rol=='SuperAdmin'):
+?>
 <body class="container">
     <?php include('../control/subcategoriaControl.php');
     $rol = checkRol();
@@ -41,5 +43,6 @@
     </div>
     <?php include('footer.php'); ?>
 </body>
-
+<?php else: header('Location: ../index.php')?>
+        <?php endif?>
 </html>

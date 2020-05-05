@@ -1,10 +1,11 @@
 <?php include('../vista/header.php'); #prueba
 ?>
-
-<body class="container">
-    <?php include('../control/categoriaControl.php');
+<?php include('../control/categoriaControl.php');
     $rol = checkRol();
-    ?>
+    if($rol=='Admin'||$rol=='SuperAdmin'):
+?>
+<body class="container">
+    
     <form action="/EntregableGrupo1/control/categoriaControl.php" method="post" class="w-50 m-auto">
         <div class="form-group">
             <label for="c_id">Id</label>
@@ -42,5 +43,6 @@
     
     <?php include('footer.php');?>
 </body>
-
+    <?php else: header('Location: ../index.php')?>
+        <?php endif?>
 </html>

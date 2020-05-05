@@ -251,5 +251,17 @@ function eliminaProductos(){
 
     $producto->eliminarProductos($idProd);
 }
+function consultarPrductosCategorias($categoria){
+    $producto = new Producto();
+    $result=$producto->consultarProductosPorCategoria($categoria);
+    if ($result != 'error') {
+        $listaProductos = $result;
+        foreach ($listaProductos as $productoEncontrado) {
+        echo "<span>$productoEncontrado[0]</span><br>";
+        echo "<img src='$productoEncontrado[1]'></img><br>";
+        echo "<span>$productoEncontrado[2]</span>";
+        }
+    }
+}
 
 ?>
