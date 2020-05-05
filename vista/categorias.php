@@ -26,22 +26,20 @@
             <input type="submit" class="btn btn-light" value="Eliminar" name="c_enter">
         </div>
     </form>
-    <?php listarCategorias(); ?>
+<br>
     <div class="table table-responsive m-auto w-50">
         <table class="table">
             <thead>
                 <th>Id</th>
                 <th>Categoria</th>
                 <th>Estado</th>
-                
-
             </thead>
             <tbody>
-                <?php listarCategoriasEstado($rol); ?>
+                <?php listarCategoriasEstado(); ?>
             </tbody>
         </table>
     </div>
-    <?php desplegableCategoria(); ?>
+    
     <?php include('footer.php');?>
 </body>
 

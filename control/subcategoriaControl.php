@@ -43,21 +43,18 @@ function desplegableEstado($rol)
     $resultado = $subCategoria->mostrarEstado();
     if ($rol == 'SuperAdmin') {
         if ($resultado != 'error') {
-            echo "<select id='Estado' name='sb_estado'>";
+
             foreach ($resultado as $Estado) {
                 echo "<option value=' $Estado[0]'> $Estado[1] </option>";
             }
-            echo "</select>";
         } else {
             echo "<p>No hay categorias</p>";
         }
     } else if ($rol) {
         if ($resultado != 'error') {
-            echo "<select id='Estado' name='sb_estado' disabled>";
             foreach ($resultado as $Estado) {
                 echo "<option value=' $Estado[0]'> $Estado[1] </option>";
             }
-            echo "</select>";
         } else {
             echo "<p>No hay categorias</p>";
         }
@@ -85,10 +82,10 @@ function listarSubCategoriasEstado()
     $resultado = $subCategoria->mostrarSubCategoriasEstado();
     if ($resultado != 'error') {
         foreach ($resultado as $subCategoriaEstado) {
-            echo "<br>";
-            echo "<span>$subCategoriaEstado[0] </span>";
-            echo "<span>$subCategoriaEstado[1] </span>";
-            echo "<span>$subCategoriaEstado[2]</span>";
+            echo "<tr>";
+            echo "<td>$subCategoriaEstado[0] </td>";
+            echo "<td>$subCategoriaEstado[1] </td>";
+            echo "<td>$subCategoriaEstado[2]</td>";
         }
     } else {
         echo "<p>No hay categorias</p>";

@@ -79,7 +79,7 @@ function desplegableCategoria()
     }
 }
 
-function listarCategoriasEstado($rol)
+function listarCategoriasEstado()
 {
     $categoria = new Categoria();
     $resultado = $categoria->mostrarCategoriasEstado();
