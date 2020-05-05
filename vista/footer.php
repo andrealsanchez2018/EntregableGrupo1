@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../public/css/fontello.css">
 </head>
 <body>
-<footer class="footer mt-auto py-3" >
+<footer id="footer" class="footer mt-auto py-3" >
         <div class="container">
             <div class="row ">
                 <div class="col-md-3">
