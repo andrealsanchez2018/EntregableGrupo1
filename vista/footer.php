@@ -15,7 +15,7 @@
             <div class="row ">
                 <div class="col-md-3">
 
-                    <a href="index.php"><b>Home</b></a> <br><br>
+                    <a href="../index.php"><b>Home</b></a> <br><br>
                     <a href="contactanos.php"><b>Contactanos</b></a><br><br>
                     
 

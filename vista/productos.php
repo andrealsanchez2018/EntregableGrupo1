@@ -13,7 +13,7 @@
 
     
 
-        <h2>Insertar productos</h2>
+        <h2 class= "h2producto">Insertar productos</h2>
         <div class="sub-container">
         <form class="formInsertar" method="POST" action="productos.php?accionProd=crearProd" enctype="multipart/form-data">
                 <input class="form-control " type="text" name="nombreProducto" placeholder="Ingrese nombre producto"/>
@@ -40,7 +40,7 @@
                 <input type="hidden" value="1" name="idUsuario_cre" placeholder="Usuario creador"/>
                 <input type="hidden" value="1" name="idUsuario_mod" placeholder="Usuario modificador"/>
 
-                <input class="btn btn-light" type="submit" value= "Insertar producto" name="enter"/>
+                <input id="insertar" class="btn btn-light" type="submit" value= "Insertar producto" name="enter"/>
             </form>
         </div>
     </div>
@@ -48,7 +48,7 @@
 
     <!-- Section de filtrar contacto -->
     <div class="container2">
-    <h3>Filtrar contactos</h3>
+    <h3 class= "h3producto">Filtrar contactos</h3>
         <div class="sub-container">    
          <form class="formQuery" method="POST" action="productos.php?accionProd=filtrarProd" enctype="multipart/form-data">
             <label for="" style="color: gray;">Filtrar por:</label>
@@ -58,7 +58,7 @@
                 <option value="precio">Precio</option>
             </select>
             <input  class="form-control " type="text" name="filter" id="filter" placeholder="Dato a consultar:" required>
-            <input  class="btn btn-light" type="submit" value="Buscar producto"/>
+            <input id="buscar" class="btn btn-light" type="submit" value="Buscar producto"/>
             </form>
         </div>
     </div>
@@ -73,13 +73,15 @@
 
 <!-- form Consultar -->
     <div class="container">
-        <h2>Lista y actualización de productos</h2>
+        <h2 class= "h2producto">Lista y actualización de productos</h2>
         <div class="sub-container">
             <form class="formConsultar" method="POST" action="productos.php?accionProd=consultarProd" enctype="multipart/form-data">   
                 <?php       
                     include_once __DIR__ . "/../control/productoControl.php";
                 ?> 
-                <input class="btn btn-light" type="submit" value="Consultar todos los productos">
+                <div class="w-100 d-flex">
+                <input id="todos" class="btn btn-light m-auto" type="submit" value="Consultar todos los productos">
+                </div>
             <form>
         </div>
     </div>

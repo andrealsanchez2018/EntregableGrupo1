@@ -183,7 +183,7 @@ if(isset($_SESSION['loggedin']))
 
     </section>
 
-    <footer class="footer mt-auto py-3" >
+   <!--  <footer class="footer mt-auto py-3" >
         <div class="container">
             <div class="row ">
                 <div class="col-md-3">
@@ -225,8 +225,8 @@ if(isset($_SESSION['loggedin']))
 
 
 
-    </footer>
-
+    </footer> -->
+<?php include 'vista/footer.php'; ?>
     
 
 </body>
