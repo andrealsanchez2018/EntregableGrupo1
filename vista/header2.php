@@ -23,10 +23,10 @@
             </div>
             <div class="ingreso col-md-3 col-12">
                 <?php if (!isset($logueado)) : ?>
-                    <span><a href="vista/login.php">Iniciar Sesión </a></span>
-                    <span><a href="">Registrarme</a></span>
+                    <span><a href="login.php">Iniciar Sesión </a></span>
+                    <span><a href="registroUsuario.php">Registrarme</a></span>
                 <?php else : ?>
-                    <span><a href="control/usuarioControl.php?mod=close">Cerrar Sesión </a></span>
+                    <span><a href="../control/usuarioControl.php?mod=close">Cerrar Sesión </a></span>
                     <span><a href="#"><?php echo $_SESSION['user']['nombre']; ?> </a></span>
                 <?php endif; ?>
 
@@ -42,7 +42,7 @@
             <div class="col-md-12 col-12">
                 <ul class="nav shadow-sm p-2 mb-4 bg-white rounded">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Inicio</a>
+                        <a class="nav-link active" href="../index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="tienda.php?cat=Ninos">Niños</a>
