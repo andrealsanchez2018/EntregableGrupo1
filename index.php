@@ -51,19 +51,19 @@ if(isset($_SESSION['loggedin']))
             <div class="col-md-12 col-12">
                 <ul class="nav shadow-sm p-2 mb-4 bg-white rounded">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Inicio</a>
+                        <a class="nav-link active" href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Niños</a>
+                        <a class="nav-link " href="vista/tienda.php?cat=Ninos">Niños</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Mujeres</a>
+                        <a class="nav-link" href="vista/tienda.php?cat=Mujeres">Mujeres</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hombres</a>
+                        <a class="nav-link" href="vista/tienda.php?cat=Hombres">Hombres</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Contacto.html">Contactanos</a>
+                        <a class="nav-link" href="#footer">Contactanos</a>
                     </li>
                     
                 </ul>
@@ -120,9 +120,9 @@ if(isset($_SESSION['loggedin']))
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                <button class="btn btn-link nin" type="button" data-toggle="collapse"
                                     data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Mujeres
+                                    Niños 
                                 </button>
                             </h2>
                         </div>
@@ -143,7 +143,7 @@ if(isset($_SESSION['loggedin']))
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse"
                                     data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    Niños
+                                    Mujeres
                                 </button>
                             </h2>
                         </div>
@@ -183,49 +183,7 @@ if(isset($_SESSION['loggedin']))
 
     </section>
 
-   <!--  <footer class="footer mt-auto py-3" >
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-3">
-
-                    <a href="index.php"><b>Home</b></a> <br><br>
-                    <a href="contactanos.php"><b>Contactanos</b></a><br><br>
-                    
-
-                </div>
-                <div class="col-md-3">
-                     <h3>Categorías</h3>
-                    <ul>
-                        <li><a href="niños.php">Niños</a>
-                        </li>
-                        <li><a href="mujeres.php">Mujeres</a>
-                        </li>
-                        <li><a href="hombres.php">Hombres</a>
-                        </li>
-                        
-                    </ul>
-                    <a href=""></a>
-                </div>
-                <div class="col-md-3"> <h3>Contactanos</h3> <br>
-                    <p> Dirección: Calle 35 #5 – 15 , Bogotá <br>
-                        cel: 316 830 57 01 <br>
-                        Tel:2222222  <br>
-                    info@clothingbictia.com  </p></div>
-                <div class="col-md-3"><h3> Redes</h3>
-                <a href="https://api.whatsapp.com/send?phone=573168305701&text=Hola%2C%20quisiera%saber%20más%20de%20ustedes"  class="icon-whatsapp"> </a>
-                <a href="#" class="icon-instagram"></a>
-                <a href="#" class="icon-facebook-squared"></a>
-                <a href="#" class="icon-youtube"></a>
-                </div>
-                
-            </div>
-
-            <center> Todos los derechos reservados Clothing Bictia 2020.</center>
-        </div>
-
-
-
-    </footer> -->
+   
 <?php include 'vista/footer.php'; ?>
     
 
