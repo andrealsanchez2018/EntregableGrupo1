@@ -27,6 +27,7 @@ function checkRol()
     <!-- Mi hoja de estilos, debe estar creada en la carpeta css -->
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/fontello.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- letra -->
 
 </head>
