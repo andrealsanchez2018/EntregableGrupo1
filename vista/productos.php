@@ -1,3 +1,10 @@
+<?php include('header.php');
+$rol = checkRol();
+if($rol=='Admin'||$rol=='SuperAdmin'):
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +14,6 @@
     <title>Productos : Lista General</title>
 </head>
 <body class="container producto">
-<?php include('header.php');?>
 <!-- form crear -->
     <div class="container2 ">
 
@@ -87,4 +93,6 @@
     </div>
     <?php include('footer.php');?>
 </body>
+<?php else: header('Location: ../index.php')?>
+        <?php endif?>
 </html>

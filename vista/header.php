@@ -27,6 +27,7 @@ function checkRol()
     <!-- Mi hoja de estilos, debe estar creada en la carpeta css -->
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/fontello.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- letra -->
 
 </head>
@@ -40,8 +41,8 @@ function checkRol()
             </div>
             <div class="ingreso col-md-3 col-12">
                 <?php if(!isset($logueado)):?>
-                <span><a href="vista/login.php">Iniciar Sesión </a></span>
-                <span><a href="">Registrarme</a></span>
+                <span><a href="login.php">Iniciar Sesión </a></span>
+                <span><a href="registroUsuario.php">Registrarme</a></span>
                 <?php else:?>
                 <span><a href="../control/usuarioControl.php?mod=close">Cerrar Sesión </a></span>
                 <span><a href="#"><?php echo $_SESSION['user']['nombre'];?> </a></span>

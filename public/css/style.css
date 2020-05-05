@@ -110,7 +110,7 @@ a{
     padding: 10px;
     border-radius: 10px;*/
 } 
-.btn-light:hover{
+.btn-light:hover, #todos:hover, #buscar:hover, #insertar:hover, #Eliminar:hover, #actualizar:hover{
     background-color: rgb(53, 83, 83);
     color: white;
 }

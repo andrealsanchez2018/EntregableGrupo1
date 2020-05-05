@@ -33,7 +33,7 @@ if(isset($_SESSION['loggedin']))
             <div class="ingreso col-md-3 col-12">
                 <?php if(!isset($logueado)):?>
                 <span><a href="vista/login.php">Iniciar Sesión </a></span>
-                <span><a href="">Registrarme</a></span>
+                <span><a href="vista/registroUsuario.php">Registrarme</a></span>
                 <?php else:?>
                 <span><a href="control/usuarioControl.php?mod=close">Cerrar Sesión </a></span>
                 <span><a href="#"><?php echo $_SESSION['user']['nombre'];?> </a></span>

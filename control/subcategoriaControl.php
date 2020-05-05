@@ -1,5 +1,6 @@
 <?php
 require(__DIR__ . '/../modelo/class.Subcategoria.php');
+//require(__DIR__ . '/../control/categoriaControl.php');
 
 //listarCategorias();
 //listarCategoriasEstado();

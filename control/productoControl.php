@@ -118,7 +118,7 @@ function listarProductos(){
 
                         <div class="buttonsActions">
                             <input type="submit" id="actualizar" class="btn btn-light" name="btnEnviar"  value="Actualizar Producto">
-                            <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
+                            <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar producto</a>
                         </div>
                     </form> 
                 </div>
@@ -251,5 +251,44 @@ function eliminaProductos(){
 
     $producto->eliminarProductos($idProd);
 }
+function consultarPrductosCategorias($categoria){
+    $producto = new Producto();
+    $result=$producto->consultarProductosPorCategoria($categoria);
+    if ($result != 'error') {
+        $listaProductos = $result;
+        foreach ($listaProductos as $productoEncontrado) {
+        echo "<div class='card m-auto' style='width: 18rem;'>";
+        echo "<img src='$productoEncontrado[1]' class='card-img-top' alt='...'>";
+        echo "<div class='card-body'>";
+        echo "<h5 class='card-title'>$productoEncontrado[0]</h5>";
+        echo "<p class='card-text'>$productoEncontrado[2]</p>";
+        echo "<a href='#' class='btn btn-primary'>Añandir</a>";
+        echo "</div>";
+        }
+    }
+}
+// <div class="card" style="width: 18rem;">
+//   <img src="..." class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">Card title</h5>
+//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//     <a href="#" class="btn btn-primary">Go somewhere</a>
+//   </div>
 
+// echo "<div class='card'>
+//         <div class='imgBx'> 
+//         <img src='$productoEncontrado[1]'></img>
+//         </div>
+//         <div class='contentBx'>
+//         <h2>$productoEncontrado[0]<h2>
+//         <div class='size'>
+//             <h3>Talla: </h3>
+//             <span>S</span>
+//             <span>M</span>
+//             <span>L</span>
+//             <span>X</span>
+//         </div>
+//         <h3>$productoEncontrado[2]</h3>
+//         <div class='link'><a href='#'>Añadir</a></div>";
+        
 ?>
