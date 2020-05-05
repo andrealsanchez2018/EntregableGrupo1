@@ -118,7 +118,7 @@ function listarProductos(){
 
                         <div class="buttonsActions">
                             <input type="submit" id="actualizar" class="btn btn-light" name="btnEnviar"  value="Actualizar Producto">
-                            <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar contacto</a>
+                            <a id="Eliminar" href="productos.php?accionProd=eliminarProd&idProd=<?php echo $productoEncontrado[0]; ?>">Eliminar producto</a>
                         </div>
                     </form> 
                 </div>

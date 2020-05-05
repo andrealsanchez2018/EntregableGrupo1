@@ -146,7 +146,13 @@ function logueo()
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['user']=$result;
+        if($_SESSION['user']['rol']=='Usuario')
+        {
         header('location: ../index.php');
+        }else{
+            header('location: ../vista/productos.php');
+        }
+        
     }else{
         //header('location: ../vistas/index.php?res=usuario_Inexistente');
         echo 'Datos no validos';

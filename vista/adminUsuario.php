@@ -73,7 +73,7 @@
             <div class="col-md-9 col-12">
                 <form class="form-inline my-2 ">
                     <input class="buscar mr-sm-2" type="text" id="buscar"placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Buscar</button>
 
                 </form>
                 <div class="table-responsive">
